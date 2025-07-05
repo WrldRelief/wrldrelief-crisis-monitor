@@ -16,9 +16,14 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+# Load environment variables from .env file
+from dotenv import load_dotenv
+load_dotenv()
+
 from hybrid_search import HybridDisasterEngine
 from ai_search import DisasterInfo
 from cache_manager import SimpleDisasterCache
+from blockchain import DisasterUploader
 
 # Logging setup
 logging.basicConfig(level=logging.INFO)
@@ -324,6 +329,9 @@ async def dashboard():
                             <button class="btn btn-success btn-small" onclick="downloadSingle('${disaster.id}')">
                                 📥 Download
                             </button>
+                            <button class="btn btn-primary btn-small" onclick="uploadToChain('${disaster.id}')">
+                                🔗 Upload
+                            </button>
                         </td>
                     </tr>
                 `).join('');
@@ -346,6 +354,64 @@ async def dashboard():
                 } catch (error) {
                     alert('Download failed. Please try again.');
                     console.error('Download error:', error);
+                }
+            }
+            
+            async function uploadToChain(disasterId) {
+                const loading = document.getElementById('loading');
+                
+                try {
+                    loading.style.display = 'inline';
+                    console.log(`🔗 Uploading disaster ${disasterId} to blockchain...`);
+                    
+                    const response = await fetch(`/api/disaster/${disasterId}/upload-chain`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' }
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        // Success notification
+                        const etherscanUrl = data.etherscan_url;
+                        const txHash = data.transaction_hash;
+                        
+                        alert(`✅ Successfully uploaded to blockchain!
+                        
+Transaction Hash: ${txHash}
+Block Number: ${data.block_number}
+Gas Used: ${data.gas_used}
+
+View on Etherscan: ${etherscanUrl}`);
+                        
+                        console.log(`✅ Uploaded disaster ${disasterId} to blockchain:`, data);
+                        
+                        // Open Etherscan in new tab
+                        if (confirm('Would you like to view the transaction on Etherscan?')) {
+                            window.open(etherscanUrl, '_blank');
+                        }
+                        
+                    } else {
+                        // Error handling
+                        let errorMessage = `❌ Upload failed: ${data.error}`;
+                        
+                        if (data.error_type === 'DUPLICATE') {
+                            errorMessage = `⚠️ This disaster already exists on the blockchain.`;
+                        } else if (data.error_type === 'CONNECTION_ERROR') {
+                            errorMessage = `❌ Blockchain connection failed. Please check your configuration.`;
+                        } else if (data.error_type === 'CONTRACT_ERROR') {
+                            errorMessage = `❌ Smart contract error. You may not have permission to upload.`;
+                        }
+                        
+                        alert(errorMessage);
+                        console.error('Upload failed:', data);
+                    }
+                    
+                } catch (error) {
+                    alert(`❌ Upload failed: ${error.message}`);
+                    console.error('Upload error:', error);
+                } finally {
+                    loading.style.display = 'none';
                 }
             }
             
@@ -470,9 +536,22 @@ async def search_disasters(request: SearchRequest):
             max_results=request.max_results
         )
         
-        # Update global cache
+        # 기존 재해 데이터와 새 검색 결과를 통합
         global current_disasters
-        current_disasters = disasters
+        
+        # 기존 재해 ID 목록
+        existing_ids = {d.id for d in current_disasters}
+        
+        # 새로운 재해만 추가
+        new_disasters = []
+        for disaster in disasters:
+            if disaster.id not in existing_ids:
+                new_disasters.append(disaster)
+        
+        # 기존 데이터에 새 데이터 추가 (교체하지 않음)
+        current_disasters.extend(new_disasters)
+        
+        logger.info(f"📊 Search results: {len(disasters)} found, {len(new_disasters)} new, total: {len(current_disasters)}")
         
         # Convert DisasterInfo objects to dictionaries
         disasters_dict = []
@@ -641,10 +720,196 @@ async def force_cache_refresh():
             "message": str(e)
         })
 
+@app.post("/api/disaster/{disaster_id}/upload-chain")
+async def upload_disaster_to_chain(disaster_id: str = Path(..., description="Disaster ID")):
+    """Upload disaster to blockchain"""
+    try:
+        logger.info(f"🔗 Blockchain upload request for disaster: {disaster_id}")
+        
+        # Find disaster in current cache
+        disaster = None
+        for d in current_disasters:
+            if d.id == disaster_id:
+                disaster = d
+                break
+        
+        if not disaster:
+            raise HTTPException(status_code=404, detail="Disaster not found")
+        
+        # Initialize blockchain uploader
+        try:
+            uploader = DisasterUploader()
+        except Exception as e:
+            logger.error(f"❌ Failed to initialize blockchain uploader: {e}")
+            return JSONResponse({
+                "success": False,
+                "error": f"Blockchain connection failed: {str(e)}",
+                "error_type": "CONNECTION_ERROR"
+            })
+        
+        # Upload to blockchain
+        result = await uploader.upload_disaster(disaster)
+        
+        if result["success"]:
+            logger.info(f"✅ Successfully uploaded disaster {disaster_id} to blockchain")
+            return JSONResponse(result)
+        else:
+            logger.error(f"❌ Failed to upload disaster {disaster_id}: {result.get('error')}")
+            return JSONResponse(result, status_code=400)
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"❌ Blockchain upload error: {e}")
+        return JSONResponse({
+            "success": False,
+            "error": str(e),
+            "error_type": "UNKNOWN_ERROR"
+        }, status_code=500)
+
+@app.get("/api/blockchain/status")
+async def get_blockchain_status():
+    """Get blockchain connection status and permissions"""
+    try:
+        uploader = DisasterUploader()
+        
+        # Check permissions
+        permissions = await uploader.check_permissions()
+        
+        # Get total disasters count from blockchain
+        total_count = await uploader.get_total_disasters_count()
+        
+        return JSONResponse({
+            "success": True,
+            "blockchain_connected": True,
+            "permissions": permissions,
+            "total_disasters_on_chain": total_count,
+            "contract_address": uploader.config.contract_address,
+            "network": uploader.config.network_name,
+            "account_address": uploader.account.address,
+            "etherscan_url": uploader.config.etherscan_url,
+            "checked_at": int(datetime.now().timestamp())
+        })
+        
+    except Exception as e:
+        logger.error(f"❌ Blockchain status check failed: {e}")
+        return JSONResponse({
+            "success": False,
+            "blockchain_connected": False,
+            "error": str(e),
+            "checked_at": int(datetime.now().timestamp())
+        })
+
+@app.get("/api/disaster/{disaster_id}/blockchain-status")
+async def get_disaster_blockchain_status(disaster_id: str = Path(..., description="Disaster ID")):
+    """Check if disaster exists on blockchain"""
+    try:
+        uploader = DisasterUploader()
+        
+        # Check if disaster exists on blockchain
+        blockchain_data = await uploader.get_disaster_from_blockchain(disaster_id)
+        
+        if blockchain_data:
+            return JSONResponse({
+                "success": True,
+                "exists_on_blockchain": True,
+                "blockchain_data": blockchain_data,
+                "disaster_id": disaster_id
+            })
+        else:
+            return JSONResponse({
+                "success": True,
+                "exists_on_blockchain": False,
+                "disaster_id": disaster_id
+            })
+            
+    except Exception as e:
+        logger.error(f"❌ Failed to check blockchain status for disaster {disaster_id}: {e}")
+        return JSONResponse({
+            "success": False,
+            "error": str(e),
+            "disaster_id": disaster_id
+        })
+
+@app.post("/api/disasters/batch-upload-chain")
+async def batch_upload_disasters_to_chain():
+    """Upload multiple disasters to blockchain"""
+    try:
+        logger.info(f"🔗 Batch blockchain upload request for {len(current_disasters)} disasters")
+        
+        if not current_disasters:
+            return JSONResponse({
+                "success": False,
+                "error": "No disasters available for upload"
+            })
+        
+        uploader = DisasterUploader()
+        
+        results = []
+        success_count = 0
+        error_count = 0
+        
+        # Upload disasters one by one (to avoid nonce conflicts)
+        for disaster in current_disasters[:10]:  # Limit to 10 for demo
+            try:
+                result = await uploader.upload_disaster(disaster)
+                results.append({
+                    "disaster_id": disaster.id,
+                    "disaster_title": disaster.title,
+                    "result": result
+                })
+                
+                if result["success"]:
+                    success_count += 1
+                    logger.info(f"✅ Uploaded {disaster.id}")
+                else:
+                    error_count += 1
+                    logger.warning(f"❌ Failed to upload {disaster.id}: {result.get('error')}")
+                
+                # Small delay to avoid rate limiting
+                await asyncio.sleep(2)
+                
+            except Exception as e:
+                error_count += 1
+                results.append({
+                    "disaster_id": disaster.id,
+                    "disaster_title": disaster.title,
+                    "result": {
+                        "success": False,
+                        "error": str(e),
+                        "error_type": "UPLOAD_ERROR"
+                    }
+                })
+                logger.error(f"❌ Exception uploading {disaster.id}: {e}")
+        
+        return JSONResponse({
+            "success": True,
+            "total_processed": len(results),
+            "success_count": success_count,
+            "error_count": error_count,
+            "results": results,
+            "uploaded_at": int(datetime.now().timestamp())
+        })
+        
+    except Exception as e:
+        logger.error(f"❌ Batch upload error: {e}")
+        return JSONResponse({
+            "success": False,
+            "error": str(e)
+        }, status_code=500)
+
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
     cache_stats = disaster_cache.get_cache_stats()
+    
+    # Check blockchain status
+    blockchain_healthy = False
+    try:
+        uploader = DisasterUploader()
+        blockchain_healthy = True
+    except:
+        blockchain_healthy = False
     
     return {
         "status": "healthy",
@@ -653,6 +918,7 @@ async def health_check():
         "monitoring": "active",
         "disasters_loaded": len(current_disasters),
         "cache_healthy": cache_stats["cache_file_exists"],
+        "blockchain_healthy": blockchain_healthy,
         "last_cache_update": cache_stats["last_update"],
         "timestamp": int(datetime.now().timestamp())
     }

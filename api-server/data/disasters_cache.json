@@ -2823,58 +2823,75 @@
       }
     },
     {
-      "id": "usgs_4.5_week_,us7000q9d1,",
-      "title": "Magnitude 5.3 Earthquake",
-      "description": "M 5.3 - 138 km NW of Tobelo, Indonesia",
-      "location": "138 km NW of Tobelo, Indonesia",
-      "severity": "MEDIUM",
-      "category": "EARTHQUAKE",
-      "timestamp": 1751114443,
-      "source": "USGS-4.5_WEEK",
-      "confidence": 0.95,
-      "affected_people": 10000,
+      "id": "news_4f1ef21f",
+      "title": "Bomb explosion in West Bengal's Purba: One killed, another injured",
+      "description": "Locals said the explosion occurred in an abandoned house, often frequented by anti-social elements, allegedly for manufacturing crude bombs",
+      "location": "Purba Medinipur, India",
+      "severity": "LOW",
+      "category": "OTHER",
+      "timestamp": 1751706051,
+      "source": "News-India Latest News: Top National Headlines Today & Breaking News | The Hindu",
+      "confidence": 0.75,
+      "affected_people": null,
       "damage_estimate": null,
       "coordinates": {
-        "lat": 2.7277,
-        "lng": 127.2628
+        "lat": 22.0648451,
+        "lng": 87.8377586
       }
     },
     {
-      "id": "usgs_4.5_week_,us7000q9cw,",
-      "title": "Magnitude 4.5 Earthquake",
-      "description": "M 4.5 - 122 km NW of Tobelo, Indonesia",
-      "location": "122 km NW of Tobelo, Indonesia",
+      "id": "usgs_4.5_week_,us7000qauc,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - Banda Sea",
+      "location": "Banda Sea",
       "severity": "LOW",
       "category": "EARTHQUAKE",
-      "timestamp": 1751111418,
+      "timestamp": 1751726146,
       "source": "USGS-4.5_WEEK",
       "confidence": 0.95,
       "affected_people": 1000,
       "damage_estimate": null,
       "coordinates": {
-        "lat": 2.3971,
-        "lng": 127.1342
+        "lat": -6.0907,
+        "lng": 129.9193
       }
     },
     {
-      "id": "usgs_4.5_week_,us7000q9cc,",
-      "title": "Magnitude 4.8 Earthquake",
-      "description": "M 4.8 - 21 km N of La Serena, Chile",
-      "location": "21 km N of La Serena, Chile",
+      "id": "news_86cc7360",
+      "title": "‘Going hungry’: More than 700 Palestinians killed seeking aid in Gaza",
+      "description": "Palestinians say they have no choice but to go to deadly US- and Israeli-backed aid sites amid growing starvation.",
+      "location": "Israel",
+      "severity": "CRITICAL",
+      "category": "OTHER",
+      "timestamp": 1751717385,
+      "source": "News-Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+      "confidence": 0.75,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 31.7683,
+        "lng": 35.2137
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qaud,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - 73 km NNE of Taltal, Chile",
+      "location": "73 km NNE of Taltal, Chile",
       "severity": "LOW",
       "category": "EARTHQUAKE",
-      "timestamp": 1751104719,
+      "timestamp": 1751726853,
       "source": "USGS-4.5_WEEK",
       "confidence": 0.95,
       "affected_people": 1000,
       "damage_estimate": null,
       "coordinates": {
-        "lat": -29.7094,
-        "lng": -71.2858
+        "lat": -24.7938,
+        "lng": -70.2104
       }
     }
   ],
-  "total_count": 169,
-  "saved_at": "2025-07-05T11:57:17.126332",
+  "total_count": 170,
+  "saved_at": "2025-07-05T17:04:32.028899",
   "version": "1.0"
 }
