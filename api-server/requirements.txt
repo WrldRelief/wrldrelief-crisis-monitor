@@ -1,0 +1,33 @@
+# 🌍 WRLD Relief Crisis Monitor - 최소 의존성
+
+# 웹 프레임워크
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+
+# 데이터 검증
+pydantic==2.10.4
+
+# HTTP 클라이언트 (AI API 호출용)
+aiohttp==3.10.11
+httpx==0.28.1
+
+# RSS 피드 파싱
+feedparser==6.0.11
+
+# 환경 변수
+python-dotenv==1.0.1
+
+# 로깅 (기본 포함되어 있지만 명시)
+# logging - 파이썬 기본 라이브러리
+
+# 날짜/시간 처리 (기본 포함)
+# datetime - 파이썬 기본 라이브러리
+
+# JSON 처리 (기본 포함)
+# json - 파이썬 기본 라이브러리
+
+# 비동기 처리 (기본 포함)
+# asyncio - 파이썬 기본 라이브러리
+
+# 타입 힌팅 (기본 포함)
+# typing - 파이썬 기본 라이브러리
