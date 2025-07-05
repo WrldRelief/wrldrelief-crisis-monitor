@@ -1,0 +1,2880 @@
+{
+  "disasters": [
+    {
+      "id": "usgs_4.5_week_,us7000qata,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - 102 km NNW of Kokoda, Papua New Guinea",
+      "location": "102 km NNW of Kokoda, Papua New Guinea",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751704388,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -7.9814,
+        "lng": 147.5159
+      }
+    },
+    {
+      "id": "news_47b7b435",
+      "title": "Israeli air strikes kill 10 near Rafah, including children",
+      "description": "Israeli air strikes kill 10 near Rafah, including children\n\n    \n    \n\n        \n    \n                Nine people have been killed on Saturday in an Israeli attack near an aid cen...",
+      "location": "Israel",
+      "severity": "LOW",
+      "category": "OTHER",
+      "timestamp": 1751701820,
+      "source": "News-Section Feed",
+      "confidence": 0.75,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 31.7683,
+        "lng": 35.2137
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qat6,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 136 km S of ‘Ohonua, Tonga",
+      "location": "136 km S of ‘Ohonua, Tonga",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751700636,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -22.5694,
+        "lng": -175.0618
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qat4,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 93 km N of Tatsugō, Japan",
+      "location": "93 km N of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751699796,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.2953,
+        "lng": 129.5892
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qasx,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 127 km E of Mil’kovo, Russia",
+      "location": "127 km E of Mil’kovo, Russia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751695895,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 54.5927,
+        "lng": 160.5944
+      }
+    },
+    {
+      "id": "news_e08792ac",
+      "title": "One killed, two injured in Israeli drone attack in southern Lebanon",
+      "description": "One killed, two injured in Israeli drone attack in southern Lebanon\n\n    \n    \n\n        \n    \n                One person was killed and two others were injured in an Israeli dron...",
+      "location": "Israel",
+      "severity": "LOW",
+      "category": "OTHER",
+      "timestamp": 1751695561,
+      "source": "News-Section Feed",
+      "confidence": 0.75,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 31.7683,
+        "lng": 35.2137
+      }
+    },
+    {
+      "id": "gdacs_ef61a904",
+      "title": "Green forest fire alert in Australia",
+      "description": "On 30/06/2025, a forest fire started in Australia,  until 03/07/2025.",
+      "location": "Australia",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751691686,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -24.7761086,
+        "lng": 134.755
+      }
+    },
+    {
+      "id": "gdacs_f8d536cb",
+      "title": "Green forest fire alert in Canada",
+      "description": "On 03/07/2025, a forest fire started in Canada,  until 04/07/2025.",
+      "location": "Canada",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751691620,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 61.0666922,
+        "lng": -107.991707
+      }
+    },
+    {
+      "id": "gdacs_ae9a4816",
+      "title": "Green forest fire alert in South Africa",
+      "description": "On 03/07/2025, a forest fire started in South Africa,  until 04/07/2025.",
+      "location": "South Africa",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751691612,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -28.8166236,
+        "lng": 24.991639
+      }
+    },
+    {
+      "id": "news_64342705",
+      "title": "GTRI cautions against imports of GM farm products from U.S.; may affect India's agricultural exports",
+      "description": "India's fragmented agri-logistics and lack of segregation infrastructure make cross-contamination likely, risking trace GM presence in export consignments, GTRI Founder Ajay Srivastava said",
+      "location": "India",
+      "severity": "LOW",
+      "category": "OTHER",
+      "timestamp": 1751691512,
+      "source": "News-India Latest News: Top National Headlines Today & Breaking News | The Hindu",
+      "confidence": 0.75,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 28.6139,
+        "lng": 77.209
+      }
+    },
+    {
+      "id": "news_11c5bd99",
+      "title": "Texas floods kill 24 people and leave many missing from girls' summer camp",
+      "description": "Emergency workers rescue more than 230 people after overnight flooding along the Guadalupe River.",
+      "location": "Location TBD",
+      "severity": "LOW",
+      "category": "FLOOD",
+      "timestamp": 1751688766,
+      "source": "News-BBC News",
+      "confidence": 0.75,
+      "affected_people": 24,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 0.0,
+        "lng": 0.0
+      }
+    },
+    {
+      "id": "news_6121e7c6",
+      "title": "Two killed in attack on Maghazi refugee camp",
+      "description": "Two killed in attack on Maghazi refugee camp\n\n    \n    \n\n        \n    \n                At least two Palestinians were killed and others injured on Saturday in an Israeli attack o...",
+      "location": "Israel",
+      "severity": "LOW",
+      "category": "OTHER",
+      "timestamp": 1751688267,
+      "source": "News-Section Feed",
+      "confidence": 0.75,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 31.7683,
+        "lng": 35.2137
+      }
+    },
+    {
+      "id": "news_6ea10240",
+      "title": "Watch: Deadly Texas flooding causes destruction",
+      "description": "Dozens of people are missing as flash floods sweep away mobile homes, vehicles and holiday cabins.",
+      "location": "Location TBD",
+      "severity": "CRITICAL",
+      "category": "FLOOD",
+      "timestamp": 1751681718,
+      "source": "News-BBC News",
+      "confidence": 0.75,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 0.0,
+        "lng": 0.0
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qarx,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 33 km ESE of Hualien City, Taiwan",
+      "location": "33 km ESE of Hualien City, Taiwan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751670759,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 23.8252,
+        "lng": 121.8887
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qarl,",
+      "title": "Magnitude 5.4 Earthquake",
+      "description": "M 5.4 - 104 km NNW of Tatsugō, Japan",
+      "location": "104 km NNW of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751664579,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3477,
+        "lng": 129.2694
+      }
+    },
+    {
+      "id": "news_6d7daa50",
+      "title": "Texas flash floods kill at least 24 people, 23 girl campers missing",
+      "description": "Months worth of heavy rain fell in a matter of hours on Texas Hill Country, killing at least 24 people in US.",
+      "location": "Location TBD",
+      "severity": "LOW",
+      "category": "FLOOD",
+      "timestamp": 1751663595,
+      "source": "News-Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+      "confidence": 0.75,
+      "affected_people": 24,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 0.0,
+        "lng": 0.0
+      }
+    },
+    {
+      "id": "gdacs_a0ee2b0e",
+      "title": "Green alert for tropical cyclone THREE-25. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).",
+      "description": "From 04/07/2025 to 05/07/2025, a Tropical Depression (maximum wind speed of 74 km/h) THREE-25 was active in Atlantic. The cyclone affects these countries: United States (vulnerability Low). Estimat...",
+      "location": "United States",
+      "severity": "HIGH",
+      "category": "HURRICANE",
+      "timestamp": 1751655072,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 39.7837304,
+        "lng": -100.445882
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qaqh,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 101 km N of Tatsugō, Japan",
+      "location": "101 km N of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751654676,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3584,
+        "lng": 129.4948
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qaqf,",
+      "title": "Magnitude 4.8 Earthquake",
+      "description": "M 4.8 - 121 km ESE of Iwaki, Japan",
+      "location": "121 km ESE of Iwaki, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751652876,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 36.6365,
+        "lng": 142.1471
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qaqc,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 97 km N of Tatsugō, Japan",
+      "location": "97 km N of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751651880,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3301,
+        "lng": 129.5469
+      }
+    },
+    {
+      "id": "gdacs_37a1cda6",
+      "title": "Green forest fire alert in United States",
+      "description": "On 01/07/2025, a forest fire started in United States,  until 04/07/2025.",
+      "location": "United States",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751648452,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 39.7837304,
+        "lng": -100.445882
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qamr,",
+      "title": "Magnitude 5.6 Earthquake",
+      "description": "M 5.6 - 253 km SSE of Ushuaia, Argentina",
+      "location": "253 km SSE of Ushuaia, Argentina",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751644066,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -57.02,
+        "lng": -67.3292
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qamn,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - 62 km SSE of Pondaguitan, Philippines",
+      "location": "62 km SSE of Pondaguitan, Philippines",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751639067,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 5.8799,
+        "lng": 126.4707
+      }
+    },
+    {
+      "id": "gdacs_8db18f42",
+      "title": "Green earthquake alert (Magnitude 5.6M, Depth:10km) in Chile 04/07/2025 15:47 UTC, No people affected in 100km.",
+      "description": "On 7/4/2025 3:47:46 PM, an earthquake occurred in Chile potentially affecting No people affected in 100km. The earthquake had Magnitude 5.6M, Depth:10km.",
+      "location": "Chile",
+      "severity": "CRITICAL",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751637770,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -31.7613365,
+        "lng": -71.3187697
+      }
+    },
+    {
+      "id": "news_0e16160a",
+      "title": "Central African Republic: Activists Arrested At Memorial Event",
+      "description": "[HRW] Nairobi -- June 25 Explosion Killed, Injured Students; Inquiry Needed",
+      "location": "Explosion Killed, Injured Students",
+      "severity": "LOW",
+      "category": "OTHER",
+      "timestamp": 1751628918,
+      "source": "News-AllAfrica News: Latest",
+      "confidence": 0.75,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 0.0,
+        "lng": 0.0
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qam0,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 106 km N of Tatsugō, Japan",
+      "location": "106 km N of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751620801,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.4033,
+        "lng": 129.4367
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qalz,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - 73 km SSW of Paracas, Peru",
+      "location": "73 km SSW of Paracas, Peru",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751619312,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -14.5139,
+        "lng": -76.4225
+      }
+    },
+    {
+      "id": "gdacs_fc43db8e",
+      "title": "Green flood alert in Germany",
+      "description": "On 02/07/2025, a flood started in Germany, lasting until 02/07/2025 (last update). The flood caused 0 deaths and 0 displaced .",
+      "location": "Germany",
+      "severity": "LOW",
+      "category": "FLOOD",
+      "timestamp": 1751611008,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": 0,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 51.1638175,
+        "lng": 10.4478313
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qald,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 45 km W of Sabang, Indonesia",
+      "location": "45 km W of Sabang, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751609950,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 5.9452,
+        "lng": 94.9095
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qal9,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - Volcano Islands, Japan region",
+      "location": "Volcano Islands, Japan region",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751609782,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 23.2985,
+        "lng": 142.3017
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qal8,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 56 km WNW of Sabang, Indonesia",
+      "location": "56 km WNW of Sabang, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751607592,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 6.0331,
+        "lng": 94.8235
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qal5,",
+      "title": "Magnitude 5.2 Earthquake",
+      "description": "M 5.2 - 32 km NW of Sabang, Indonesia",
+      "location": "32 km NW of Sabang, Indonesia",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751607231,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 6.102,
+        "lng": 95.1074
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qal4,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 47 km SE of San Pedro de Atacama, Chile",
+      "location": "47 km SE of San Pedro de Atacama, Chile",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751607071,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -23.2513,
+        "lng": -67.9239
+      }
+    },
+    {
+      "id": "gdacs_d28462ca",
+      "title": "Green forest fire alert in Canada",
+      "description": "On 01/07/2025, a forest fire started in Canada,  until 02/07/2025.",
+      "location": "Canada",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751605254,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 61.0666922,
+        "lng": -107.991707
+      }
+    },
+    {
+      "id": "gdacs_fc95133b",
+      "title": "Green flood alert in Peru",
+      "description": "On 01/07/2025, a flood started in Peru, lasting until 03/07/2025 (last update). The flood caused 0 deaths and 0 displaced .",
+      "location": "Peru",
+      "severity": "LOW",
+      "category": "FLOOD",
+      "timestamp": 1751602703,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": 0,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -6.8699697,
+        "lng": -75.0458515
+      }
+    },
+    {
+      "id": "gdacs_77ed7ac5",
+      "title": "Green flood alert in Ecuador",
+      "description": "On 30/06/2025, a flood started in Ecuador, lasting until 02/07/2025 (last update). The flood caused 2 deaths and 2 displaced .",
+      "location": "Ecuador",
+      "severity": "LOW",
+      "category": "FLOOD",
+      "timestamp": 1751602612,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": 2,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -1.3397668,
+        "lng": -79.3666965
+      }
+    },
+    {
+      "id": "gdacs_5128083f",
+      "title": "Green flood alert in El Salvador",
+      "description": "On 01/07/2025, a flood started in El Salvador, lasting until 03/07/2025 (last update). The flood caused 0 deaths and 50 displaced .",
+      "location": "Location TBD",
+      "severity": "LOW",
+      "category": "FLOOD",
+      "timestamp": 1751601489,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": 50,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 0.0,
+        "lng": 0.0
+      }
+    },
+    {
+      "id": "gdacs_d5270d3a",
+      "title": "Volcanic eruption is on going for Kirishimayama in Japan",
+      "description": "Volcano Kirishimayama is emitting ash clouds according to the regional VAAC. The aviation alert level is Green.",
+      "location": "Kirishimayama, Japan",
+      "severity": "LOW",
+      "category": "VOLCANO",
+      "timestamp": 1751599276,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 31.9380533,
+        "lng": 130.8615144
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qakl,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 101 km NNW of Tatsugō, Japan",
+      "location": "101 km NNW of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751599226,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3382,
+        "lng": 129.3278
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qakc,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 285 km SSE of Port Blair, India",
+      "location": "285 km SSE of Port Blair, India",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751595075,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 9.3598,
+        "lng": 93.9142
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qajx,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 99 km N of Tatsugō, Japan",
+      "location": "99 km N of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751587376,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3324,
+        "lng": 129.4164
+      }
+    },
+    {
+      "id": "gdacs_e2d5016f",
+      "title": "Orange alert for tropical cyclone DANAS-25. Population affected by Category 1 (120 km/h) wind speeds or higher is 0.634 million .",
+      "description": "From 04/07/2025 to 05/07/2025, a Tropical Storm (maximum wind speed of 157 km/h) DANAS-25 was active in NWPacific. The cyclone affects these countries: China (vulnerability Medium). Estimated popul...",
+      "location": "China",
+      "severity": "HIGH",
+      "category": "HURRICANE",
+      "timestamp": 1751586771,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 35.0000663,
+        "lng": 104.999955
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qajk,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 26 km SSE of Uyuni, Bolivia",
+      "location": "26 km SSE of Uyuni, Bolivia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751582577,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -20.6737,
+        "lng": -66.7016
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qaj8,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - Kuril Islands",
+      "location": "Kuril Islands",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751576955,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 46.7821,
+        "lng": 151.3443
+      }
+    },
+    {
+      "id": "gdacs_8f43df7e",
+      "title": "Green forest fire alert in United States",
+      "description": "On 03/07/2025, a forest fire started in United States,  until 04/07/2025.",
+      "location": "United States",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751576411,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 39.7837304,
+        "lng": -100.445882
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qaif,",
+      "title": "Magnitude 5 Earthquake",
+      "description": "M 5.0 - Carlsberg Ridge",
+      "location": "Carlsberg Ridge",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751565065,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 7.1587,
+        "lng": 61.3595
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qafw,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 266 km ENE of Lospalos, Timor Leste",
+      "location": "266 km ENE of Lospalos, Timor Leste",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751551297,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -7.3174,
+        "lng": 129.0907
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qafs,",
+      "title": "Magnitude 5 Earthquake",
+      "description": "M 5.0 - 78 km NW of Isangel, Vanuatu",
+      "location": "78 km NW of Isangel, Vanuatu",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751549962,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -19.1394,
+        "lng": 168.6651
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qafk,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - Carlsberg Ridge",
+      "location": "Carlsberg Ridge",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751548612,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 5.7286,
+        "lng": 61.6233
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qafi,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 97 km N of Tatsugō, Japan",
+      "location": "97 km N of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751548404,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3133,
+        "lng": 129.4082
+      }
+    },
+    {
+      "id": "gdacs_b4806a7f",
+      "title": "Orange forest fire alert in Greece",
+      "description": "On 02/07/2025, a forest fire started in Greece,  until 03/07/2025.",
+      "location": "Greece",
+      "severity": "HIGH",
+      "category": "WILDFIRE",
+      "timestamp": 1751547636,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 38.9953683,
+        "lng": 21.9877132
+      }
+    },
+    {
+      "id": "gdacs_88725ce3",
+      "title": "Green forest fire alert in Türkiye",
+      "description": "On 02/07/2025, a forest fire started in Türkiye,  until 04/07/2025.",
+      "location": "Location TBD",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751547626,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 0.0,
+        "lng": 0.0
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qaev,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 291 km SSE of Port Blair, India",
+      "location": "291 km SSE of Port Blair, India",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751543052,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 9.2803,
+        "lng": 93.8796
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qaem,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 7 km ENE of Ruteng, Indonesia",
+      "location": "7 km ENE of Ruteng, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751541010,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -8.5866,
+        "lng": 120.5276
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qaeh,",
+      "title": "Magnitude 5.4 Earthquake",
+      "description": "M 5.4 - Pacific-Antarctic Ridge",
+      "location": "Pacific-Antarctic Ridge",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751539164,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -62.6273,
+        "lng": -158.9707
+      }
+    },
+    {
+      "id": "gdacs_e2d40a92",
+      "title": "Green flood alert in Algeria",
+      "description": "On 30/06/2025, a flood started in Algeria, lasting until 02/07/2025 (last update). The flood caused 0 deaths and 0 displaced .",
+      "location": "Algeria",
+      "severity": "LOW",
+      "category": "FLOOD",
+      "timestamp": 1751533117,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": 0,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 28.0000272,
+        "lng": 2.9999825
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qae1,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 154 km NE of Lospalos, Timor Leste",
+      "location": "154 km NE of Lospalos, Timor Leste",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751532462,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -7.5175,
+        "lng": 127.9689
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qae0,",
+      "title": "Magnitude 5.2 Earthquake",
+      "description": "M 5.2 - 140 km S of ‘Ohonua, Tonga",
+      "location": "140 km S of ‘Ohonua, Tonga",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751532009,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -22.6038,
+        "lng": -174.8631
+      }
+    },
+    {
+      "id": "gdacs_c10f21d5",
+      "title": "Green flood alert in Switzerland",
+      "description": "On 30/06/2025, a flood started in Switzerland, lasting until 02/07/2025 (last update). The flood caused 0 deaths and 0 displaced .",
+      "location": "Switzerland",
+      "severity": "LOW",
+      "category": "FLOOD",
+      "timestamp": 1751531387,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": 0,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 46.7985624,
+        "lng": 8.2319736
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qadp,",
+      "title": "Magnitude 5.5 Earthquake",
+      "description": "M 5.5 - 108 km N of Tatsugō, Japan",
+      "location": "108 km N of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751526780,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.4164,
+        "lng": 129.395
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qadq,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 112 km N of Tatsugō, Japan",
+      "location": "112 km N of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751524502,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.4575,
+        "lng": 129.4944
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qadj,",
+      "title": "Magnitude 5.1 Earthquake",
+      "description": "M 5.1 - 96 km N of Tatsugō, Japan",
+      "location": "96 km N of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751523491,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3181,
+        "lng": 129.6298
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qade,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - 29 km SSW of El Hoyo, Argentina",
+      "location": "29 km SSW of El Hoyo, Argentina",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751523237,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -27.2641,
+        "lng": -63.368
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qadd,",
+      "title": "Magnitude 5 Earthquake",
+      "description": "M 5.0 - 101 km N of Tatsugō, Japan",
+      "location": "101 km N of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751523108,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3563,
+        "lng": 129.4598
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qad7,",
+      "title": "Magnitude 5.4 Earthquake",
+      "description": "M 5.4 - 99 km SSW of Uyuni, Bolivia",
+      "location": "99 km SSW of Uyuni, Bolivia",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751521302,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -21.2657,
+        "lng": -67.2411
+      }
+    },
+    {
+      "id": "gdacs_5a155010",
+      "title": "Green earthquake alert (Magnitude 5.5M, Depth:10km) in Japan 03/07/2025 07:13 UTC, Few people affected in 100km.",
+      "description": "On 7/3/2025 7:13:00 AM, an earthquake occurred in Japan potentially affecting Few people affected in 100km. The earthquake had Magnitude 5.5M, Depth:10km.",
+      "location": "Japan",
+      "severity": "CRITICAL",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751520832,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 36.5748441,
+        "lng": 139.2394179
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qad4,",
+      "title": "Magnitude 4.8 Earthquake",
+      "description": "M 4.8 - 94 km N of Tatsugō, Japan",
+      "location": "94 km N of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751520666,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3026,
+        "lng": 129.5498
+      }
+    },
+    {
+      "id": "gdacs_b27ec846",
+      "title": "Green forest fire alert in Australia",
+      "description": "On 27/06/2025, a forest fire started in Australia,  until 04/07/2025.",
+      "location": "Australia",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751518926,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -24.7761086,
+        "lng": 134.755
+      }
+    },
+    {
+      "id": "gdacs_9dc48d97",
+      "title": "Green flood alert in Australia",
+      "description": "On 01/07/2025, a flood started in Australia, lasting until 03/07/2025 (last update). The flood caused 0 deaths and 50 displaced .",
+      "location": "Australia",
+      "severity": "LOW",
+      "category": "FLOOD",
+      "timestamp": 1751515787,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": 50,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -24.7761086,
+        "lng": 134.755
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qac2,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 116 km SW of Banda Aceh, Indonesia",
+      "location": "116 km SW of Banda Aceh, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751503429,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 4.7052,
+        "lng": 94.6971
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qaby,",
+      "title": "Magnitude 5.3 Earthquake",
+      "description": "M 5.3 - 219 km NW of Lautoka, Fiji",
+      "location": "219 km NW of Lautoka, Fiji",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751501571,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -16.5108,
+        "lng": 175.7394
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qabn,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 54 km N of Mandalgovi, Mongolia",
+      "location": "54 km N of Mandalgovi, Mongolia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751497430,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 46.2509,
+        "lng": 106.2914
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qabf,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 266 km S of Banjar, Indonesia",
+      "location": "266 km S of Banjar, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751494081,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -9.5719,
+        "lng": 107.0447
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qabd,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 101 km N of Tatsugō, Japan",
+      "location": "101 km N of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751493090,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.353,
+        "lng": 129.4475
+      }
+    },
+    {
+      "id": "gdacs_998b241f",
+      "title": "Green forest fire alert in Canada",
+      "description": "On 01/07/2025, a forest fire started in Canada,  until 04/07/2025.",
+      "location": "Canada",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751490012,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 61.0666922,
+        "lng": -107.991707
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa9g,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - 93 km NNW of Tatsugō, Japan",
+      "location": "93 km NNW of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751477576,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.2416,
+        "lng": 129.2829
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa92,",
+      "title": "Magnitude 5.2 Earthquake",
+      "description": "M 5.2 - South Sandwich Islands region",
+      "location": "South Sandwich Islands region",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751475484,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -59.3695,
+        "lng": -25.5127
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa7e,",
+      "title": "Magnitude 5.2 Earthquake",
+      "description": "M 5.2 - 96 km NNW of Tatsugō, Japan",
+      "location": "96 km NNW of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751471358,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.2684,
+        "lng": 129.2616
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa74,",
+      "title": "Magnitude 4.8 Earthquake",
+      "description": "M 4.8 - 46 km W of Bengkulu, Indonesia",
+      "location": "46 km W of Bengkulu, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751466457,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -3.7782,
+        "lng": 101.8474
+      }
+    },
+    {
+      "id": "gdacs_26309ebe",
+      "title": "Green forest fire alert in Tanzania",
+      "description": "On 29/06/2025, a forest fire started in Tanzania,  until 03/07/2025.",
+      "location": "Location TBD",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751461235,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 0.0,
+        "lng": 0.0
+      }
+    },
+    {
+      "id": "gdacs_234b510e",
+      "title": "Green forest fire alert in The Democratic Republic of Congo",
+      "description": "On 30/06/2025, a forest fire started in The Democratic Republic of Congo,  until 05/07/2025.",
+      "location": "Location TBD",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751461214,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 0.0,
+        "lng": 0.0
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa6c,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 105 km W of El Aguilar, Argentina",
+      "location": "105 km W of El Aguilar, Argentina",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751454685,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -23.0783,
+        "lng": -66.6971
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa65,",
+      "title": "Magnitude 4.8 Earthquake",
+      "description": "M 4.8 - 29 km WNW of Ransiki, Indonesia",
+      "location": "29 km WNW of Ransiki, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751452400,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -1.3665,
+        "lng": 133.9477
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa5p,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 101 km NNW of Tatsugō, Japan",
+      "location": "101 km NNW of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751442161,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3147,
+        "lng": 129.2453
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa5n,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 117 km NNW of Tatsugō, Japan",
+      "location": "117 km NNW of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751441353,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.4215,
+        "lng": 129.1201
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa5i,",
+      "title": "Magnitude 5 Earthquake",
+      "description": "M 5.0 - 99 km NNW of Tatsugō, Japan",
+      "location": "99 km NNW of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751440676,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.316,
+        "lng": 129.3286
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa5h,",
+      "title": "Magnitude 5.6 Earthquake",
+      "description": "M 5.6 - 189 km ENE of Levuka, Fiji",
+      "location": "189 km ENE of Levuka, Fiji",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751440526,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -17.5875,
+        "lng": -178.9662
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa5e,",
+      "title": "Magnitude 5.6 Earthquake",
+      "description": "M 5.6 - 94 km NNW of Tatsugō, Japan",
+      "location": "94 km NNW of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751437609,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.2436,
+        "lng": 129.2443
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa5c,",
+      "title": "Magnitude 5.1 Earthquake",
+      "description": "M 5.1 - 78 km N of Tatsugō, Japan",
+      "location": "78 km N of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751436442,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.1475,
+        "lng": 129.4776
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa56,",
+      "title": "Magnitude 5.2 Earthquake",
+      "description": "M 5.2 - 94 km NNW of Tatsugō, Japan",
+      "location": "94 km NNW of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751435941,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.2307,
+        "lng": 129.2174
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa57,",
+      "title": "Magnitude 5.2 Earthquake",
+      "description": "M 5.2 - 103 km NNW of Tatsugō, Japan",
+      "location": "103 km NNW of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751435606,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.2944,
+        "lng": 129.1529
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa55,",
+      "title": "Magnitude 5.2 Earthquake",
+      "description": "M 5.2 - 90 km NNW of Tatsugō, Japan",
+      "location": "90 km NNW of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751435508,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.2113,
+        "lng": 129.2578
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa54,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - Carlsberg Ridge",
+      "location": "Carlsberg Ridge",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751434876,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 5.7354,
+        "lng": 61.3265
+      }
+    },
+    {
+      "id": "gdacs_88c8cdb4",
+      "title": "Green earthquake alert (Magnitude 5.6M, Depth:515.379km) in Fiji 02/07/2025 07:15 UTC, 5 thousand in 100km.",
+      "description": "On 7/2/2025 7:15:26 AM, an earthquake occurred in Fiji potentially affecting 5 thousand in 100km. The earthquake had Magnitude 5.6M, Depth:515.379km.",
+      "location": "USA",
+      "severity": "CRITICAL",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751434700,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 39.7837304,
+        "lng": -100.445882
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa52,",
+      "title": "Magnitude 5.1 Earthquake",
+      "description": "M 5.1 - 58 km NNW of Tatsugō, Japan",
+      "location": "58 km NNW of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751433922,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 28.9658,
+        "lng": 129.4781
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa4z,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 93 km NNW of Tatsugō, Japan",
+      "location": "93 km NNW of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751433737,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.2434,
+        "lng": 129.2687
+      }
+    },
+    {
+      "id": "gdacs_2eae2423",
+      "title": "Green forest fire alert in Australia",
+      "description": "On 29/06/2025, a forest fire started in Australia,  until 05/07/2025.",
+      "location": "Australia",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751432443,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -24.7761086,
+        "lng": 134.755
+      }
+    },
+    {
+      "id": "gdacs_b08bb4e4",
+      "title": "Green flood alert in France, Italy",
+      "description": "On 30/06/2025, a flood started in France, Italy, lasting until 02/07/2025 (last update). The flood caused 2 deaths and 72 displaced .",
+      "location": "France, Italy On",
+      "severity": "LOW",
+      "category": "FLOOD",
+      "timestamp": 1751432299,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": 72,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 0.0,
+        "lng": 0.0
+      }
+    },
+    {
+      "id": "gdacs_d037085d",
+      "title": "Green flood alert in France",
+      "description": "On 30/06/2025, a flood started in France, lasting until 02/07/2025 (last update). The flood caused 0 deaths and 15 displaced .",
+      "location": "France",
+      "severity": "LOW",
+      "category": "FLOOD",
+      "timestamp": 1751432204,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": 15,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 46.603354,
+        "lng": 1.8883335
+      }
+    },
+    {
+      "id": "gdacs_88e3db3b",
+      "title": "Green earthquake alert (Magnitude 5.6M, Depth:10km) in Japan 02/07/2025 06:26 UTC, 40 thousand in 100km.",
+      "description": "On 7/2/2025 6:26:49 AM, an earthquake occurred in Japan potentially affecting 40 thousand in 100km. The earthquake had Magnitude 5.6M, Depth:10km.",
+      "location": "Japan",
+      "severity": "CRITICAL",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751431593,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 36.5748441,
+        "lng": 139.2394179
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa4u,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 75 km NW of Sinabang, Indonesia",
+      "location": "75 km NW of Sinabang, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751431494,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 2.9785,
+        "lng": 95.9124
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa4s,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - Carlsberg Ridge",
+      "location": "Carlsberg Ridge",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751431168,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 5.5882,
+        "lng": 61.5858
+      }
+    },
+    {
+      "id": "gdacs_6245e049",
+      "title": "Green flood alert in Austria",
+      "description": "On 30/06/2025, a flood started in Austria, lasting until 02/07/2025 (last update). The flood caused 0 deaths and 167 displaced .",
+      "location": "Austria",
+      "severity": "LOW",
+      "category": "FLOOD",
+      "timestamp": 1751430204,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": 167,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 47.59397,
+        "lng": 14.12456
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa4b,",
+      "title": "Magnitude 5.4 Earthquake",
+      "description": "M 5.4 - south of the Fiji Islands",
+      "location": "south of the Fiji Islands",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751425037,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -26.7362,
+        "lng": -176.3247
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa49,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - 22 km SSE of Petropavlovsk-Kamchatsky, Russia",
+      "location": "22 km SSE of Petropavlovsk-Kamchatsky, Russia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751424589,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 52.8884,
+        "lng": 158.7884
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa3y,",
+      "title": "Magnitude 5.5 Earthquake",
+      "description": "M 5.5 - 81 km W of Cartagena, Chile",
+      "location": "81 km W of Cartagena, Chile",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751420379,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -33.5723,
+        "lng": -72.4855
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa3x,",
+      "title": "Magnitude 4.8 Earthquake",
+      "description": "M 4.8 - 121 km S of Vanimo, Papua New Guinea",
+      "location": "121 km S of Vanimo, Papua New Guinea",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751420009,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -3.7796,
+        "lng": 141.196
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa3f,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - 94 km NNW of Tatsugō, Japan",
+      "location": "94 km NNW of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751414808,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.2677,
+        "lng": 129.3371
+      }
+    },
+    {
+      "id": "gdacs_f9899f60",
+      "title": "Green earthquake alert (Magnitude 5.5M, Depth:10km) in Chile 02/07/2025 01:39 UTC, 450 thousand in 100km.",
+      "description": "On 7/2/2025 1:39:39 AM, an earthquake occurred in Chile potentially affecting 450 thousand in 100km. The earthquake had Magnitude 5.5M, Depth:10km.",
+      "location": "Chile",
+      "severity": "CRITICAL",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751414212,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -31.7613365,
+        "lng": -71.3187697
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa2m,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 101 km N of Tatsugō, Japan",
+      "location": "101 km N of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751405506,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3579,
+        "lng": 129.4597
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa28,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 23 km SSE of Nishinoomote, Japan",
+      "location": "23 km SSE of Nishinoomote, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751401085,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 30.5338,
+        "lng": 131.0842
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa1z,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 31 km S of Ovalle, Chile",
+      "location": "31 km S of Ovalle, Chile",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751399053,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -30.8762,
+        "lng": -71.2608
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa1v,",
+      "title": "Magnitude 5.1 Earthquake",
+      "description": "M 5.1 - 99 km N of Tatsugō, Japan",
+      "location": "99 km N of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751398327,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3308,
+        "lng": 129.4061
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qa1q,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 29 km W of Baharly, Turkmenistan",
+      "location": "29 km W of Baharly, Turkmenistan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751397364,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 38.4795,
+        "lng": 57.0976
+      }
+    },
+    {
+      "id": "gdacs_2b950fdb",
+      "title": "Green alert for tropical cyclone MUN-25. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).",
+      "description": "From 01/07/2025 to 05/07/2025, a Tropical Storm (maximum wind speed of 111 km/h) MUN-25 was active in NWPacific. The cyclone affects these countries: [unknown] (vulnerability [unknown]). Estimated ...",
+      "location": "Location TBD",
+      "severity": "HIGH",
+      "category": "HURRICANE",
+      "timestamp": 1751394095,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 0.0,
+        "lng": 0.0
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9yw,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 117 km NNW of Tatsugō, Japan",
+      "location": "117 km NNW of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751378621,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.474,
+        "lng": 129.3025
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9yp,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - 62 km WNW of Gunungsitoli, Indonesia",
+      "location": "62 km WNW of Gunungsitoli, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751375327,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 1.5276,
+        "lng": 97.1102
+      }
+    },
+    {
+      "id": "gdacs_fb156282",
+      "title": "Green forest fire alert in The Democratic Republic of Congo",
+      "description": "On 28/06/2025, a forest fire started in The Democratic Republic of Congo,  until 02/07/2025.",
+      "location": "Location TBD",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751374862,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 0.0,
+        "lng": 0.0
+      }
+    },
+    {
+      "id": "gdacs_9630c389",
+      "title": "Green forest fire alert in Australia",
+      "description": "On 30/06/2025, a forest fire started in Australia,  until 01/07/2025.",
+      "location": "Australia",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751374822,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -24.7761086,
+        "lng": 134.755
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9yh,",
+      "title": "Magnitude 4.8 Earthquake",
+      "description": "M 4.8 - 216 km E of Levuka, Fiji",
+      "location": "216 km E of Levuka, Fiji",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751370704,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -17.6991,
+        "lng": -178.6809
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9ye,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 99 km N of Tatsugō, Japan",
+      "location": "99 km N of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751368926,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3334,
+        "lng": 129.4451
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9y3,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 113 km NNW of Tatsugō, Japan",
+      "location": "113 km NNW of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751361428,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.4163,
+        "lng": 129.2296
+      }
+    },
+    {
+      "id": "gdacs_0477bba3",
+      "title": "Green forest fire alert in Canada",
+      "description": "On 29/06/2025, a forest fire started in Canada,  until 04/07/2025.",
+      "location": "Canada",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751360440,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 61.0666922,
+        "lng": -107.991707
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9xr,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - 105 km N of Tatsugō, Japan",
+      "location": "105 km N of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751357427,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3902,
+        "lng": 129.4215
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9wz,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 117 km S of La Libertad, El Salvador",
+      "location": "117 km S of La Libertad, El Salvador",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751345247,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 12.4295,
+        "lng": -89.3765
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9vu,",
+      "title": "Magnitude 5.1 Earthquake",
+      "description": "M 5.1 - 48 km WNW of Port-Vila, Vanuatu",
+      "location": "48 km WNW of Port-Vila, Vanuatu",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751327325,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -17.4974,
+        "lng": 167.9268
+      }
+    },
+    {
+      "id": "gdacs_6b4c8608",
+      "title": "Green forest fire alert in Australia",
+      "description": "On 29/06/2025, a forest fire started in Australia,  until 02/07/2025.",
+      "location": "Australia",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751302813,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -24.7761086,
+        "lng": 134.755
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9rm,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 95 km NNW of Tatsugō, Japan",
+      "location": "95 km NNW of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751296947,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.2972,
+        "lng": 129.3956
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9ru,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - Scotia Sea",
+      "location": "Scotia Sea",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751294109,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -61.0502,
+        "lng": -38.6954
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9qv,",
+      "title": "Magnitude 5.1 Earthquake",
+      "description": "M 5.1 - Scotia Sea",
+      "location": "Scotia Sea",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751285571,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -61.0001,
+        "lng": -38.5006
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9q4,",
+      "title": "Magnitude 5.2 Earthquake",
+      "description": "M 5.2 - 98 km NNW of Tatsugō, Japan",
+      "location": "98 km NNW of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751276002,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3206,
+        "lng": 129.392
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9pv,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 10 km S of Ayna, Peru",
+      "location": "10 km S of Ayna, Peru",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751273047,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -12.749,
+        "lng": -73.9123
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9pq,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 11 km NNW of Yujing, Taiwan",
+      "location": "11 km NNW of Yujing, Taiwan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751271766,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 23.2175,
+        "lng": 120.4075
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9pn,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 41 km SSW of Illapel, Chile",
+      "location": "41 km SSW of Illapel, Chile",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751271148,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -31.9581,
+        "lng": -71.3942
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9pb,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - 288 km SSE of Port Blair, India",
+      "location": "288 km SSE of Port Blair, India",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751265381,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 9.3301,
+        "lng": 93.9257
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9p6,",
+      "title": "Magnitude 5 Earthquake",
+      "description": "M 5.0 - 282 km SSE of Port Blair, India",
+      "location": "282 km SSE of Port Blair, India",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751262741,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 9.3885,
+        "lng": 93.9149
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9ns,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 149 km WNW of Tobelo, Indonesia",
+      "location": "149 km WNW of Tobelo, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751261663,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 2.0894,
+        "lng": 126.7192
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9nl,",
+      "title": "Magnitude 5.1 Earthquake",
+      "description": "M 5.1 - 280 km SSE of Port Blair, India",
+      "location": "280 km SSE of Port Blair, India",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751258342,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 9.4396,
+        "lng": 93.9794
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9nf,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 93 km NNW of Tatsugō, Japan",
+      "location": "93 km NNW of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751254579,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.2747,
+        "lng": 129.4036
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9n8,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 37 km ENE of Jurm, Afghanistan",
+      "location": "37 km ENE of Jurm, Afghanistan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751250760,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 36.9444,
+        "lng": 71.2404
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9mq,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 193 km WSW of Tual, Indonesia",
+      "location": "193 km WSW of Tual, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751240317,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -6.4997,
+        "lng": 131.2374
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9mr,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - Carlsberg Ridge",
+      "location": "Carlsberg Ridge",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751240095,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 8.1222,
+        "lng": 58.703
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9mg,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - south of the Fiji Islands",
+      "location": "south of the Fiji Islands",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751236059,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -23.7604,
+        "lng": 178.8796
+      }
+    },
+    {
+      "id": "gdacs_57723bc8",
+      "title": "Green forest fire alert in Canada",
+      "description": "On 27/06/2025, a forest fire started in Canada,  until 02/07/2025.",
+      "location": "Canada",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751216425,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 61.0666922,
+        "lng": -107.991707
+      }
+    },
+    {
+      "id": "gdacs_534c86aa",
+      "title": "Green forest fire alert in Australia",
+      "description": "On 27/06/2025, a forest fire started in Australia,  until 01/07/2025.",
+      "location": "Australia",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751216419,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -24.7761086,
+        "lng": 134.755
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9ic,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 6 km WSW of Cárdenas, Nicaragua",
+      "location": "6 km WSW of Cárdenas, Nicaragua",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751197062,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 11.1829,
+        "lng": -85.57
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9id,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - Norwegian Sea",
+      "location": "Norwegian Sea",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751196977,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 72.7915,
+        "lng": 4.151
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9hi,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - 187 km ESE of Attu Station, Alaska",
+      "location": "187 km ESE of Attu Station, Alaska",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751181236,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 52.3505,
+        "lng": 175.8352
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,ak02589szjmo,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 266 km SE of Attu Station, Alaska",
+      "location": "266 km SE of Attu Station, Alaska",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751181235,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 51.2332,
+        "lng": 176.0558
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9hh,",
+      "title": "Magnitude 5.2 Earthquake",
+      "description": "M 5.2 - 103 km N of Tatsugō, Japan",
+      "location": "103 km N of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751181116,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3697,
+        "lng": 129.4395
+      }
+    },
+    {
+      "id": "gdacs_20c32d0f",
+      "title": "Green alert for tropical cyclone FLOSSIE-25. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (0 in Tropical Storm).",
+      "description": "From 29/06/2025 to 03/07/2025, a Tropical Storm (maximum wind speed of 185 km/h) FLOSSIE-25 was active in EastPacific. The cyclone affects these countries: Mexico (vulnerability [unknown]). Estimat...",
+      "location": "Mexico",
+      "severity": "HIGH",
+      "category": "HURRICANE",
+      "timestamp": 1751179957,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 23.6585116,
+        "lng": -102.0077097
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9hc,",
+      "title": "Magnitude 5.1 Earthquake",
+      "description": "M 5.1 - 157 km SSW of Lorengau, Papua New Guinea",
+      "location": "157 km SSW of Lorengau, Papua New Guinea",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751179689,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -3.2634,
+        "lng": 146.5516
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9h6,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 96 km N of Tatsugō, Japan",
+      "location": "96 km N of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751176369,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3144,
+        "lng": 129.505
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9h4,",
+      "title": "Magnitude 5.1 Earthquake",
+      "description": "M 5.1 - south of Panama",
+      "location": "south of Panama",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751175995,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 3.9148,
+        "lng": -82.6878
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9gh,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 199 km ESE of Kuril’sk, Russia",
+      "location": "199 km ESE of Kuril’sk, Russia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751168764,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 44.9009,
+        "lng": 150.3651
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9gd,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - Kermadec Islands, New Zealand",
+      "location": "Kermadec Islands, New Zealand",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751166660,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -29.8255,
+        "lng": -178.4606
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,ew1751164680,nc75202001,us7000q9g4,nn00899682,",
+      "title": "Magnitude 4.54 Earthquake",
+      "description": "M 4.5 - 8 km SSE of Deep Springs, CA",
+      "location": "8 km SSE of Deep Springs, CA",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751164678,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 37.316,
+        "lng": -117.920666666667
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9g2,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 64 km NE of Barkhan, Pakistan",
+      "location": "64 km NE of Barkhan, Pakistan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751164373,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 30.3299,
+        "lng": 69.9739
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9fx,",
+      "title": "Magnitude 4.8 Earthquake",
+      "description": "M 4.8 - 30 km SW of Hihifo, Tonga",
+      "location": "30 km SW of Hihifo, Tonga",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751162187,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -16.1673,
+        "lng": -173.9837
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9fs,",
+      "title": "Magnitude 5.4 Earthquake",
+      "description": "M 5.4 - 100 km NNW of Tatsugō, Japan",
+      "location": "100 km NNW of Tatsugō, Japan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751159725,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3356,
+        "lng": 129.3957
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9fq,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - 100 km NNW of Tatsugō, Japan",
+      "location": "100 km NNW of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751159639,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.2263,
+        "lng": 129.0759
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9fa,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - Nicobar Islands, India region",
+      "location": "Nicobar Islands, India region",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751153696,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 9.1944,
+        "lng": 94.041
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9f3,",
+      "title": "Magnitude 5.3 Earthquake",
+      "description": "M 5.3 - 56 km NNE of Barkhan, Pakistan",
+      "location": "56 km NNE of Barkhan, Pakistan",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751149440,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 30.3642,
+        "lng": 69.7734
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9f2,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 260 km S of Ambon, Indonesia",
+      "location": "260 km S of Ambon, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751149307,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -6.0104,
+        "lng": 127.7682
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9e7,",
+      "title": "Magnitude 5.1 Earthquake",
+      "description": "M 5.1 - 31 km SSW of Puerto San José, Guatemala",
+      "location": "31 km SSW of Puerto San José, Guatemala",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751139321,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 13.6747,
+        "lng": -90.9565
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9dv,",
+      "title": "Magnitude 5.1 Earthquake",
+      "description": "M 5.1 - South Sandwich Islands region",
+      "location": "South Sandwich Islands region",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751134700,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -55.7896,
+        "lng": -27.1313
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9d1,",
+      "title": "Magnitude 5.3 Earthquake",
+      "description": "M 5.3 - 138 km NW of Tobelo, Indonesia",
+      "location": "138 km NW of Tobelo, Indonesia",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751114443,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 2.7277,
+        "lng": 127.2628
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9cw,",
+      "title": "Magnitude 4.5 Earthquake",
+      "description": "M 4.5 - 122 km NW of Tobelo, Indonesia",
+      "location": "122 km NW of Tobelo, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751111418,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 2.3971,
+        "lng": 127.1342
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000q9cc,",
+      "title": "Magnitude 4.8 Earthquake",
+      "description": "M 4.8 - 21 km N of La Serena, Chile",
+      "location": "21 km N of La Serena, Chile",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751104719,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -29.7094,
+        "lng": -71.2858
+      }
+    }
+  ],
+  "total_count": 169,
+  "saved_at": "2025-07-05T11:57:17.126332",
+  "version": "1.0"
+}

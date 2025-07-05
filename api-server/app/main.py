@@ -16,7 +16,9 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from ai_search import DisasterSearchEngine, DisasterInfo
+from hybrid_search import HybridDisasterEngine
+from ai_search import DisasterInfo
+from cache_manager import SimpleDisasterCache
 
 # Logging setup
 logging.basicConfig(level=logging.INFO)
@@ -33,8 +35,11 @@ class SearchRequest(BaseModel):
     query: Optional[str] = "global disasters today"
     max_results: Optional[int] = 20
 
-# Global AI search engine
-search_engine = DisasterSearchEngine()
+# Global Hybrid search engine (API + AI)
+search_engine = HybridDisasterEngine()
+
+# Global disaster cache (file-based)
+disaster_cache = SimpleDisasterCache()
 
 # Global disaster cache for auto-refresh
 current_disasters = []
@@ -44,11 +49,23 @@ async def startup_event():
     """Application startup initialization"""
     logger.info("🚀 Starting WRLD Relief Crisis Monitor...")
     
-    # Load initial disaster data from last 30 days
-    global current_disasters
-    current_disasters = await search_engine.get_initial_disasters(days=30)
+    # Initialize cache (load from file)
+    await disaster_cache.initialize()
     
-    logger.info(f"✅ Dashboard ready! Loaded {len(current_disasters)} disasters from last 30 days")
+    # Get cached disasters
+    cached_disasters = await disaster_cache.get_disasters(days=7)
+    
+    if len(cached_disasters) < 50 or disaster_cache.should_update():
+        # Cache is empty or outdated, fetch fresh data
+        logger.info("🔄 Cache is empty or outdated, fetching fresh data...")
+        fresh_disasters = await search_engine.get_initial_disasters(days=7)
+        await disaster_cache.update_cache(fresh_disasters)
+        
+    # Load current disasters from cache
+    global current_disasters
+    current_disasters = await disaster_cache.get_disasters(days=7)
+    
+    logger.info(f"✅ Dashboard ready! Loaded {len(current_disasters)} disasters from cache")
 
 @app.get("/")
 async def dashboard():
@@ -370,16 +387,24 @@ async def dashboard():
 
 @app.get("/api/initial-load")
 async def load_initial_disasters():
-    """Load initial disaster data from last 30 days"""
+    """Load initial disaster data from cache (instant response)"""
     try:
-        logger.info("🔍 Loading initial disasters from last 30 days...")
+        logger.info("📂 Loading disasters from cache...")
         
+        # Get disasters from cache (instant)
+        disasters = await disaster_cache.get_disasters(days=7)
+        
+        # Background update if needed
+        if disaster_cache.should_update():
+            asyncio.create_task(background_update())
+        
+        # Update global cache
         global current_disasters
-        current_disasters = await search_engine.get_initial_disasters(days=30)
+        current_disasters = disasters
         
         # Convert DisasterInfo objects to dictionaries
         disasters_dict = []
-        for disaster in current_disasters:
+        for disaster in disasters:
             disasters_dict.append({
                 "id": disaster.id,
                 "title": disaster.title,
@@ -400,6 +425,8 @@ async def load_initial_disasters():
             "disasters": disasters_dict,
             "total": len(disasters_dict),
             "days": 7,
+            "cached": True,
+            "last_update": disaster_cache.last_update.isoformat() if disaster_cache.last_update else None,
             "loaded_at": int(datetime.now().timestamp())
         })
         
@@ -410,6 +437,26 @@ async def load_initial_disasters():
             "message": str(e),
             "disasters": []
         })
+
+async def background_update():
+    """백그라운드에서 캐시 업데이트"""
+    try:
+        logger.info("🔄 Background update started...")
+        
+        # 새로운 데이터 수집
+        fresh_disasters = await search_engine.get_initial_disasters(days=7)
+        
+        # 캐시 업데이트
+        added_count = await disaster_cache.update_cache(fresh_disasters)
+        
+        # 글로벌 캐시 업데이트
+        global current_disasters
+        current_disasters = await disaster_cache.get_disasters(days=7)
+        
+        logger.info(f"✅ Background update complete: {added_count} new disasters, total: {len(current_disasters)}")
+        
+    except Exception as e:
+        logger.error(f"❌ Background update failed: {e}")
 
 @app.post("/api/search")
 async def search_disasters(request: SearchRequest):
@@ -545,15 +592,68 @@ async def get_disaster_stats():
         logger.error(f"❌ Stats error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.get("/api/cache/stats")
+async def get_cache_stats():
+    """Get cache statistics and status"""
+    try:
+        cache_stats = disaster_cache.get_cache_stats()
+        
+        return JSONResponse({
+            "success": True,
+            "cache_stats": cache_stats,
+            "current_disasters": len(current_disasters),
+            "should_update": disaster_cache.should_update(),
+            "timestamp": int(datetime.now().timestamp())
+        })
+        
+    except Exception as e:
+        logger.error(f"❌ Cache stats error: {e}")
+        return JSONResponse({
+            "success": False,
+            "message": str(e)
+        })
+
+@app.post("/api/cache/refresh")
+async def force_cache_refresh():
+    """Force cache refresh (manual trigger)"""
+    try:
+        logger.info("🔄 Manual cache refresh triggered...")
+        
+        # Force refresh cache
+        added_count = await disaster_cache.force_refresh()
+        
+        # Update global cache
+        global current_disasters
+        current_disasters = await disaster_cache.get_disasters(days=7)
+        
+        return JSONResponse({
+            "success": True,
+            "message": f"Cache refreshed successfully",
+            "added_disasters": added_count,
+            "total_disasters": len(current_disasters),
+            "refreshed_at": int(datetime.now().timestamp())
+        })
+        
+    except Exception as e:
+        logger.error(f"❌ Manual refresh error: {e}")
+        return JSONResponse({
+            "success": False,
+            "message": str(e)
+        })
+
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
+    cache_stats = disaster_cache.get_cache_stats()
+    
     return {
         "status": "healthy",
         "service": "wrld-relief-crisis-monitor",
         "version": "2.0.0",
         "monitoring": "active",
         "disasters_loaded": len(current_disasters),
+        "cache_healthy": cache_stats["cache_file_exists"],
+        "last_cache_update": cache_stats["last_update"],
         "timestamp": int(datetime.now().timestamp())
     }
 
