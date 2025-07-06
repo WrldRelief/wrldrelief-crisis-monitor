@@ -2670,159 +2670,6 @@
       }
     },
     {
-      "id": "usgs_4.5_week_,us7000q9g2,",
-      "title": "Magnitude 4.5 Earthquake",
-      "description": "M 4.5 - 64 km NE of Barkhan, Pakistan",
-      "location": "64 km NE of Barkhan, Pakistan",
-      "severity": "LOW",
-      "category": "EARTHQUAKE",
-      "timestamp": 1751164373,
-      "source": "USGS-4.5_WEEK",
-      "confidence": 0.95,
-      "affected_people": 1000,
-      "damage_estimate": null,
-      "coordinates": {
-        "lat": 30.3299,
-        "lng": 69.9739
-      }
-    },
-    {
-      "id": "usgs_4.5_week_,us7000q9fx,",
-      "title": "Magnitude 4.8 Earthquake",
-      "description": "M 4.8 - 30 km SW of Hihifo, Tonga",
-      "location": "30 km SW of Hihifo, Tonga",
-      "severity": "LOW",
-      "category": "EARTHQUAKE",
-      "timestamp": 1751162187,
-      "source": "USGS-4.5_WEEK",
-      "confidence": 0.95,
-      "affected_people": 1000,
-      "damage_estimate": null,
-      "coordinates": {
-        "lat": -16.1673,
-        "lng": -173.9837
-      }
-    },
-    {
-      "id": "usgs_4.5_week_,us7000q9fs,",
-      "title": "Magnitude 5.4 Earthquake",
-      "description": "M 5.4 - 100 km NNW of Tatsugō, Japan",
-      "location": "100 km NNW of Tatsugō, Japan",
-      "severity": "MEDIUM",
-      "category": "EARTHQUAKE",
-      "timestamp": 1751159725,
-      "source": "USGS-4.5_WEEK",
-      "confidence": 0.95,
-      "affected_people": 10000,
-      "damage_estimate": null,
-      "coordinates": {
-        "lat": 29.3356,
-        "lng": 129.3957
-      }
-    },
-    {
-      "id": "usgs_4.5_week_,us7000q9fq,",
-      "title": "Magnitude 4.9 Earthquake",
-      "description": "M 4.9 - 100 km NNW of Tatsugō, Japan",
-      "location": "100 km NNW of Tatsugō, Japan",
-      "severity": "LOW",
-      "category": "EARTHQUAKE",
-      "timestamp": 1751159639,
-      "source": "USGS-4.5_WEEK",
-      "confidence": 0.95,
-      "affected_people": 1000,
-      "damage_estimate": null,
-      "coordinates": {
-        "lat": 29.2263,
-        "lng": 129.0759
-      }
-    },
-    {
-      "id": "usgs_4.5_week_,us7000q9fa,",
-      "title": "Magnitude 4.5 Earthquake",
-      "description": "M 4.5 - Nicobar Islands, India region",
-      "location": "Nicobar Islands, India region",
-      "severity": "LOW",
-      "category": "EARTHQUAKE",
-      "timestamp": 1751153696,
-      "source": "USGS-4.5_WEEK",
-      "confidence": 0.95,
-      "affected_people": 1000,
-      "damage_estimate": null,
-      "coordinates": {
-        "lat": 9.1944,
-        "lng": 94.041
-      }
-    },
-    {
-      "id": "usgs_4.5_week_,us7000q9f3,",
-      "title": "Magnitude 5.3 Earthquake",
-      "description": "M 5.3 - 56 km NNE of Barkhan, Pakistan",
-      "location": "56 km NNE of Barkhan, Pakistan",
-      "severity": "MEDIUM",
-      "category": "EARTHQUAKE",
-      "timestamp": 1751149440,
-      "source": "USGS-4.5_WEEK",
-      "confidence": 0.95,
-      "affected_people": 10000,
-      "damage_estimate": null,
-      "coordinates": {
-        "lat": 30.3642,
-        "lng": 69.7734
-      }
-    },
-    {
-      "id": "usgs_4.5_week_,us7000q9f2,",
-      "title": "Magnitude 4.5 Earthquake",
-      "description": "M 4.5 - 260 km S of Ambon, Indonesia",
-      "location": "260 km S of Ambon, Indonesia",
-      "severity": "LOW",
-      "category": "EARTHQUAKE",
-      "timestamp": 1751149307,
-      "source": "USGS-4.5_WEEK",
-      "confidence": 0.95,
-      "affected_people": 1000,
-      "damage_estimate": null,
-      "coordinates": {
-        "lat": -6.0104,
-        "lng": 127.7682
-      }
-    },
-    {
-      "id": "usgs_4.5_week_,us7000q9e7,",
-      "title": "Magnitude 5.1 Earthquake",
-      "description": "M 5.1 - 31 km SSW of Puerto San José, Guatemala",
-      "location": "31 km SSW of Puerto San José, Guatemala",
-      "severity": "MEDIUM",
-      "category": "EARTHQUAKE",
-      "timestamp": 1751139321,
-      "source": "USGS-4.5_WEEK",
-      "confidence": 0.95,
-      "affected_people": 10000,
-      "damage_estimate": null,
-      "coordinates": {
-        "lat": 13.6747,
-        "lng": -90.9565
-      }
-    },
-    {
-      "id": "usgs_4.5_week_,us7000q9dv,",
-      "title": "Magnitude 5.1 Earthquake",
-      "description": "M 5.1 - South Sandwich Islands region",
-      "location": "South Sandwich Islands region",
-      "severity": "MEDIUM",
-      "category": "EARTHQUAKE",
-      "timestamp": 1751134700,
-      "source": "USGS-4.5_WEEK",
-      "confidence": 0.95,
-      "affected_people": 10000,
-      "damage_estimate": null,
-      "coordinates": {
-        "lat": -55.7896,
-        "lng": -27.1313
-      }
-    },
-    {
       "id": "news_4f1ef21f",
       "title": "Bomb explosion in West Bengal's Purba: One killed, another injured",
       "description": "Locals said the explosion occurred in an abandoned house, often frequented by anti-social elements, allegedly for manufacturing crude bombs",
@@ -2889,9 +2736,281 @@
         "lat": -24.7938,
         "lng": -70.2104
       }
+    },
+    {
+      "id": "news_668f66e4",
+      "title": "At least 23 Palestinians killed by Israel in Gaza while trying to access aid",
+      "description": "At least 23 Palestinians killed by Israel in Gaza while trying to access aid\n\n    \n    \n\n        \n    \n                At least 23 Palestinians were killed by Israeli strikes and...",
+      "location": "Israel, Gaza",
+      "severity": "LOW",
+      "category": "OTHER",
+      "timestamp": 1751729904,
+      "source": "News-Section Feed",
+      "confidence": 0.75,
+      "affected_people": 4891,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 31.7683,
+        "lng": 35.2137
+      }
+    },
+    {
+      "id": "news_3609be36",
+      "title": "30 fall ill due to ‘water contamination’ in Guntakal",
+      "description": "No description available",
+      "location": "Guntakal, India",
+      "severity": "LOW",
+      "category": "OTHER",
+      "timestamp": 1751726210,
+      "source": "News-India Latest News: Top National Headlines Today & Breaking News | The Hindu",
+      "confidence": 0.75,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 15.163811,
+        "lng": 77.3761354
+      }
+    },
+    {
+      "id": "news_f1da8ca1",
+      "title": "Two Palestinians killed in Israeli drone strike in Gaza",
+      "description": "Two Palestinians killed in Israeli drone strike in Gaza\n\n    \n    \n\n        \n    \n                Two Palestinians have been killed in an Israeli drone strike targeting the town ...",
+      "location": "Israel",
+      "severity": "LOW",
+      "category": "OTHER",
+      "timestamp": 1751726089,
+      "source": "News-Section Feed",
+      "confidence": 0.75,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 31.7683,
+        "lng": 35.2137
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qauv,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 93 km NNW of Tatsugō, Japan",
+      "location": "93 km NNW of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751734633,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.2807,
+        "lng": 129.4124
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qaxi,",
+      "title": "Magnitude 4.6 Earthquake",
+      "description": "M 4.6 - 54 km NW of Sabang, Indonesia",
+      "location": "54 km NW of Sabang, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751765610,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 6.2259,
+        "lng": 94.9546
+      }
+    },
+    {
+      "id": "news_f85d133e",
+      "title": "Heavy rain, flooding likely from today",
+      "description": "RAWALPINDI: Pakistan’s Meteorological Depart­ment on Saturday issued an alert for heavy rains in the upper parts of the country, including the twin cities of Rawalpindi and Islamabad, for July 6 an...",
+      "location": "Murree, Galiyat",
+      "severity": "LOW",
+      "category": "FLOOD",
+      "timestamp": 1751760955,
+      "source": "News-The Dawn News - Home",
+      "confidence": 0.75,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 33.9078,
+        "lng": 73.3894
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qavd,",
+      "title": "Magnitude 5.3 Earthquake",
+      "description": "M 5.3 - southeast of the Loyalty Islands",
+      "location": "southeast of the Loyalty Islands",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751744847,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -22.7306,
+        "lng": 172.1265
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qavc,",
+      "title": "Magnitude 5.5 Earthquake",
+      "description": "M 5.5 - 52 km NNW of Sabang, Indonesia",
+      "location": "52 km NNW of Sabang, Indonesia",
+      "severity": "MEDIUM",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751744540,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 10000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 6.3214,
+        "lng": 95.1103
+      }
+    },
+    {
+      "id": "news_8f5280fb",
+      "title": "BBC witnesses destruction after house ripped from foundations in Texas floods",
+      "description": "At least 32 people have been killed, including 14 children, officials said, after flash floods hit Kerr County.",
+      "location": "Kerrville, Texas, USA",
+      "severity": "LOW",
+      "category": "FLOOD",
+      "timestamp": 1751743948,
+      "source": "News-BBC News",
+      "confidence": 0.75,
+      "affected_people": 32,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 30.048469,
+        "lng": -99.1399464
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qav4,",
+      "title": "Magnitude 4.7 Earthquake",
+      "description": "M 4.7 - 47 km WNW of Waingapu, Indonesia",
+      "location": "47 km WNW of Waingapu, Indonesia",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751740228,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -9.5289,
+        "lng": 119.8465
+      }
+    },
+    {
+      "id": "gdacs_3bb8c1f8",
+      "title": "Green earthquake alert (Magnitude 5.5M, Depth:10km) in Indonesia 05/07/2025 19:42 UTC, 560 thousand in 100km.",
+      "description": "On 7/5/2025 7:42:20 PM, an earthquake occurred in Indonesia potentially affecting 560 thousand in 100km. The earthquake had Magnitude 5.5M, Depth:10km.",
+      "location": "Indonesia",
+      "severity": "CRITICAL",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751738480,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -2.4833826,
+        "lng": 117.8902853
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qauy,",
+      "title": "Magnitude 4.8 Earthquake",
+      "description": "M 4.8 - 113 km E of Saipan, Northern Mariana Islands",
+      "location": "113 km E of Saipan, Northern Mariana Islands",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751738282,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 15.2284,
+        "lng": 146.8103
+      }
+    },
+    {
+      "id": "news_a1af1e13",
+      "title": "Maximum temperature record shattered in GB’s Chilas and Bunji: PMD",
+      "description": "The Pakistan Meteorological Department (PMD) on Saturday reported that new extreme maximum temperature records were set in Gilgit-Baltistan’s Chilas and Bunji areas, according to a press release.\nT...",
+      "location": "Lower Chitral, Upper Dir",
+      "severity": "HIGH",
+      "category": "FLOOD",
+      "timestamp": 1751734413,
+      "source": "News-The Dawn News - Home",
+      "confidence": 0.75,
+      "affected_people": 1,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 35.8467,
+        "lng": 71.7858
+      }
+    },
+    {
+      "id": "usgs_4.5_week_,us7000qasl,",
+      "title": "Magnitude 4.9 Earthquake",
+      "description": "M 4.9 - 94 km N of Tatsugō, Japan",
+      "location": "94 km N of Tatsugō, Japan",
+      "severity": "LOW",
+      "category": "EARTHQUAKE",
+      "timestamp": 1751687261,
+      "source": "USGS-4.5_WEEK",
+      "confidence": 0.95,
+      "affected_people": 1000,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": 29.3009,
+        "lng": 129.5306
+      }
+    },
+    {
+      "id": "gdacs_7f353bb9",
+      "title": "Green forest fire alert in Australia",
+      "description": "On 30/06/2025, a forest fire started in Australia,  until 05/07/2025.",
+      "location": "Australia",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751389213,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -24.7761086,
+        "lng": 134.755
+      }
+    },
+    {
+      "id": "gdacs_b4982d19",
+      "title": "Green forest fire alert in Australia",
+      "description": "On 22/06/2025, a forest fire started in Australia,  until 02/07/2025.",
+      "location": "Australia",
+      "severity": "LOW",
+      "category": "WILDFIRE",
+      "timestamp": 1751202096,
+      "source": "GDACS-EU",
+      "confidence": 0.85,
+      "affected_people": null,
+      "damage_estimate": null,
+      "coordinates": {
+        "lat": -24.7761086,
+        "lng": 134.755
+      }
     }
   ],
-  "total_count": 170,
-  "saved_at": "2025-07-05T17:04:32.028899",
+  "total_count": 177,
+  "saved_at": "2025-07-06T04:34:59.705934",
   "version": "1.0"
 }

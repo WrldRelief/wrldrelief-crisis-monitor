@@ -34,3 +34,6 @@ python-dotenv==1.0.1
 
 # 블록체인 연동
 web3==6.15.1
+
+# ASI Alliance uAgents 프레임워크
+uagents==0.12.0

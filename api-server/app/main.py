@@ -1,38 +1,46 @@
 """
-🌍 WRLD Relief Crisis Monitor - Real-time Global Disaster Monitoring Dashboard
-AI-powered disaster monitoring with automatic updates and blockchain data export
+🌍 WRLD Relief Crisis Monitor - Integrated Dashboard with AI Agent
+Real-time Global Disaster Monitoring with Natural Language Search
 """
 
 from fastapi import FastAPI, HTTPException, Path
 from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 import asyncio
 import logging
 from datetime import datetime
 import json
-
 import sys
 import os
+
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-# Load environment variables from .env file
+# Load environment variables
 from dotenv import load_dotenv
 load_dotenv()
-
-from hybrid_search import HybridDisasterEngine
-from ai_search import DisasterInfo
-from cache_manager import SimpleDisasterCache
-from blockchain import DisasterUploader
 
 # Logging setup
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# FastAPI app creation
+from hybrid_search import HybridDisasterEngine
+from ai_search import DisasterInfo
+from cache_manager import SimpleDisasterCache
+
+# Optional blockchain import
+try:
+    from blockchain import DisasterUploader
+    BLOCKCHAIN_AVAILABLE = True
+except ImportError as e:
+    logger.warning(f"⚠️ Blockchain module not available: {e}")
+    DisasterUploader = None
+    BLOCKCHAIN_AVAILABLE = False
+
+# FastAPI app
 app = FastAPI(
     title="🌍 WRLD Relief Crisis Monitor",
-    description="Real-time Global Disaster Monitoring Dashboard",
+    description="Real-time Global Disaster Monitoring Dashboard with AI Agent",
     version="2.0.0"
 )
 
@@ -40,13 +48,34 @@ class SearchRequest(BaseModel):
     query: Optional[str] = "global disasters today"
     max_results: Optional[int] = 20
 
-# Global Hybrid search engine (API + AI)
+class DisasterQueryRequest(BaseModel):
+    query: str = "global disasters today"
+    max_results: int = 10
+    requester: str = "web_user"
+
+class DisasterResult(BaseModel):
+    id: str
+    title: str
+    description: str
+    location: str
+    severity: str
+    category: str
+    timestamp: int
+    source: str
+    confidence: float
+    affected_people: int = 0
+    coordinates: Dict[str, float] = {"lat": 0.0, "lng": 0.0}
+
+class DisasterResults(BaseModel):
+    disasters: List[DisasterResult]
+    total_count: int
+    query: str
+    searched_at: int
+    agent_name: str = "WRLD Relief Disaster Agent"
+
+# Global instances
 search_engine = HybridDisasterEngine()
-
-# Global disaster cache (file-based)
 disaster_cache = SimpleDisasterCache()
-
-# Global disaster cache for auto-refresh
 current_disasters = []
 
 @app.on_event("startup")
@@ -54,27 +83,22 @@ async def startup_event():
     """Application startup initialization"""
     logger.info("🚀 Starting WRLD Relief Crisis Monitor...")
     
-    # Initialize cache (load from file)
     await disaster_cache.initialize()
-    
-    # Get cached disasters
     cached_disasters = await disaster_cache.get_disasters(days=7)
     
     if len(cached_disasters) < 50 or disaster_cache.should_update():
-        # Cache is empty or outdated, fetch fresh data
-        logger.info("🔄 Cache is empty or outdated, fetching fresh data...")
+        logger.info("🔄 Fetching fresh data...")
         fresh_disasters = await search_engine.get_initial_disasters(days=7)
         await disaster_cache.update_cache(fresh_disasters)
         
-    # Load current disasters from cache
     global current_disasters
     current_disasters = await disaster_cache.get_disasters(days=7)
     
-    logger.info(f"✅ Dashboard ready! Loaded {len(current_disasters)} disasters from cache")
+    logger.info(f"✅ Dashboard ready! Loaded {len(current_disasters)} disasters")
 
 @app.get("/")
-async def dashboard():
-    """Main dashboard page with auto-monitoring"""
+async def integrated_dashboard():
+    """Integrated dashboard with AI Agent functionality"""
     return HTMLResponse("""
     <!DOCTYPE html>
     <html>
@@ -105,12 +129,91 @@ async def dashboard():
                 margin-bottom: 20px;
                 border-left: 4px solid #28a745;
             }
-            .controls {
+            .search-tabs {
                 background: white;
-                padding: 20px;
                 border-radius: 10px;
                 margin-bottom: 20px;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                overflow: hidden;
+            }
+            .tab-buttons {
+                display: flex;
+                background: #f8f9fa;
+                border-bottom: 1px solid #ddd;
+            }
+            .tab-button {
+                flex: 1;
+                padding: 15px 20px;
+                border: none;
+                background: transparent;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: 500;
+                transition: all 0.3s;
+                border-bottom: 3px solid transparent;
+            }
+            .tab-button.active {
+                background: white;
+                border-bottom-color: #007bff;
+                color: #007bff;
+            }
+            .tab-button:hover:not(.active) {
+                background: #e9ecef;
+            }
+            .tab-content {
+                padding: 20px;
+                display: none;
+            }
+            .tab-content.active {
+                display: block;
+            }
+            .search-input, .ai-search-input {
+                width: 100%;
+                padding: 15px;
+                border: 2px solid #ddd;
+                border-radius: 8px;
+                font-size: 16px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+            }
+            .search-input:focus, .ai-search-input:focus {
+                border-color: #007bff;
+                outline: none;
+            }
+            .example-queries {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 10px;
+                margin: 15px 0;
+            }
+            .example-btn {
+                padding: 10px;
+                background: #e9ecef;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                cursor: pointer;
+                text-align: center;
+                transition: all 0.3s;
+                font-size: 14px;
+            }
+            .example-btn:hover {
+                background: #007bff;
+                color: white;
+            }
+            .ai-results {
+                margin-top: 20px;
+                padding: 15px;
+                background: #f8f9fa;
+                border-radius: 8px;
+                border-left: 4px solid #007bff;
+                display: none;
+            }
+            .disaster-item {
+                background: white;
+                padding: 15px;
+                margin: 10px 0;
+                border-radius: 6px;
+                border-left: 4px solid #28a745;
             }
             .results-section {
                 background: white;
@@ -169,38 +272,69 @@ async def dashboard():
                 color: #28a745;
                 font-weight: 500;
             }
-            .search-input {
-                width: 300px;
-                padding: 10px;
-                border: 2px solid #ddd;
-                border-radius: 5px;
-                font-size: 14px;
-            }
-            .search-input:focus {
-                border-color: #007bff;
-                outline: none;
-            }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="header">
                 <h1>🌍 WRLD Relief Crisis Monitor</h1>
-                <p>Real-time Global Disaster Monitoring Dashboard</p>
+                <p>Real-time Global Disaster Monitoring Dashboard with AI Agent</p>
             </div>
             
             <div class="status-bar">
                 <strong>Status:</strong> <span class="auto-refresh">Monitoring Active</span> | 
                 <strong>Last Update:</strong> <span id="lastUpdate">Loading...</span> | 
                 <strong>Auto-refresh:</strong> Every 10 minutes |
-                <strong>Data Range:</strong> Last 30 days
+                <strong>Data Range:</strong> Last 7 days
             </div>
             
-            <div class="controls">
-                <input type="text" id="searchQuery" class="search-input" placeholder="Search disasters (e.g., earthquake japan, flood texas)..." value="global disasters today">
-                <button class="btn btn-primary" onclick="searchDisasters()">🔍 Search Disasters</button>
-                <button class="btn btn-success" onclick="refreshData()">🔄 Refresh Now</button>
-                <span class="loading" id="loading">Loading...</span>
+            <div class="search-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="switchTab('standard')">🔍 Standard Search</button>
+                    <button class="tab-button" onclick="switchTab('ai')">🤖 AI Agent Search</button>
+                </div>
+                
+                <div id="standard-tab" class="tab-content active">
+                    <h4>Standard Disaster Search</h4>
+                    <p>Search disasters using keywords and filters</p>
+                    <input type="text" id="searchQuery" class="search-input" 
+                           placeholder="Search disasters (e.g., earthquake japan, flood texas)..." 
+                           value="global disasters today">
+                    <div>
+                        <button class="btn btn-primary" onclick="searchDisasters()">🔍 Search Disasters</button>
+                        <button class="btn btn-success" onclick="refreshData()">🔄 Refresh Now</button>
+                        <span class="loading" id="loading">Loading...</span>
+                    </div>
+                </div>
+                
+                <div id="ai-tab" class="tab-content">
+                    <h4>AI Agent Natural Language Search</h4>
+                    <p>Ask questions in natural language about global disasters</p>
+                    <input type="text" id="aiQuery" class="ai-search-input" 
+                           placeholder="Ask about disasters (e.g., 'What earthquakes happened in Japan?', 'Show me recent floods')" 
+                           value="What earthquakes happened in Japan recently?">
+                    
+                    <div>
+                        <button class="btn btn-primary" onclick="searchWithAI()">🤖 Ask AI Agent</button>
+                        <button class="btn btn-success" onclick="getAgentStatus()">📊 Agent Status</button>
+                        <span class="loading" id="aiLoading">Processing...</span>
+                    </div>
+                    
+                    <h5>Example Queries:</h5>
+                    <div class="example-queries">
+                        <div class="example-btn" onclick="setAIQuery('What earthquakes happened in Japan recently?')">🗾 Japan Earthquakes</div>
+                        <div class="example-btn" onclick="setAIQuery('Show me recent floods in Texas')">🌊 Texas Floods</div>
+                        <div class="example-btn" onclick="setAIQuery('What wildfires are happening globally?')">🔥 Global Wildfires</div>
+                        <div class="example-btn" onclick="setAIQuery('Show me conflicts and attacks')">⚔️ Conflicts</div>
+                        <div class="example-btn" onclick="setAIQuery('What hurricanes or typhoons occurred?')">🌀 Hurricanes</div>
+                        <div class="example-btn" onclick="setAIQuery('Show me magnitude 5+ earthquakes')">📊 Strong Earthquakes</div>
+                    </div>
+                    
+                    <div id="aiResults" class="ai-results">
+                        <h4>🤖 AI Agent Response:</h4>
+                        <div id="aiResultsContent"></div>
+                    </div>
+                </div>
             </div>
             
             <div class="results-section">
@@ -220,7 +354,7 @@ async def dashboard():
                             </tr>
                         </thead>
                         <tbody id="disastersBody">
-                            <tr><td colspan="8" style="text-align: center; padding: 20px;">Loading initial disaster data from last 7 days...</td></tr>
+                            <tr><td colspan="8" style="text-align: center; padding: 20px;">Loading disaster data...</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -231,19 +365,138 @@ async def dashboard():
             let currentDisasters = [];
             let autoRefreshInterval;
             
-            // Load initial data on page load
+            // Initialize on page load
             window.onload = async function() {
                 await loadInitialData();
                 startAutoRefresh();
                 updateLastUpdateTime();
             };
             
+            // Tab switching
+            function switchTab(tabName) {
+                // Update tab buttons
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelector(`[onclick="switchTab('${tabName}')"]`).classList.add('active');
+                
+                // Update tab content
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                document.getElementById(`${tabName}-tab`).classList.add('active');
+            }
+            
+            // AI Agent functions
+            function setAIQuery(query) {
+                document.getElementById('aiQuery').value = query;
+            }
+            
+            async function searchWithAI() {
+                const query = document.getElementById('aiQuery').value;
+                const loading = document.getElementById('aiLoading');
+                const results = document.getElementById('aiResults');
+                const resultsContent = document.getElementById('aiResultsContent');
+                
+                if (!query.trim()) {
+                    alert('Please enter a question.');
+                    return;
+                }
+                
+                loading.style.display = 'inline';
+                results.style.display = 'none';
+                
+                try {
+                    const response = await fetch('/api/uagent/query', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            query: query, 
+                            max_results: 5,
+                            requester: "web_user"
+                        })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.disasters && data.disasters.length > 0) {
+                        resultsContent.innerHTML = `
+                            <p><strong>Query:</strong> "${data.query}"</p>
+                            <p><strong>Results:</strong> ${data.total_count} disasters found</p>
+                            <p><strong>Agent:</strong> ${data.agent_name}</p>
+                            <hr>
+                            ${data.disasters.map((disaster, i) => `
+                                <div class="disaster-item">
+                                    <h5>🚨 Disaster ${i + 1}: ${disaster.title}</h5>
+                                    <p><strong>📍 Location:</strong> ${disaster.location}</p>
+                                    <p><strong>⚠️ Severity:</strong> ${disaster.severity}</p>
+                                    <p><strong>📂 Category:</strong> ${disaster.category}</p>
+                                    <p><strong>📰 Source:</strong> ${disaster.source}</p>
+                                    <p><strong>🎯 Confidence:</strong> ${(disaster.confidence * 100).toFixed(1)}%</p>
+                                    ${disaster.affected_people > 0 ? `<p><strong>👥 Affected:</strong> ${disaster.affected_people} people</p>` : ''}
+                                    <p><strong>📝 Description:</strong> ${disaster.description}</p>
+                                </div>
+                            `).join('')}
+                        `;
+                        results.style.display = 'block';
+                    } else {
+                        resultsContent.innerHTML = `
+                            <p><strong>Query:</strong> "${data.query}"</p>
+                            <p>❌ No disasters found matching your criteria.</p>
+                            <p>Try a different search term.</p>
+                        `;
+                        results.style.display = 'block';
+                    }
+                    
+                } catch (error) {
+                    resultsContent.innerHTML = `
+                        <p>❌ Search error: ${error.message}</p>
+                        <p>Please try again.</p>
+                    `;
+                    results.style.display = 'block';
+                    console.error('AI search error:', error);
+                } finally {
+                    loading.style.display = 'none';
+                }
+            }
+            
+            async function getAgentStatus() {
+                const loading = document.getElementById('aiLoading');
+                const results = document.getElementById('aiResults');
+                const resultsContent = document.getElementById('aiResultsContent');
+                
+                loading.style.display = 'inline';
+                
+                try {
+                    const response = await fetch('/api/uagent/status');
+                    const data = await response.json();
+                    
+                    resultsContent.innerHTML = `
+                        <h4>📊 WRLD Relief Agent Status</h4>
+                        <p><strong>🟢 Status:</strong> ${data.status}</p>
+                        <p><strong>🤖 Agent Name:</strong> ${data.agent_name}</p>
+                        <p><strong>📊 Total Disasters:</strong> ${data.total_disasters}</p>
+                        <p><strong>⏰ Last Update:</strong> ${data.last_update || 'N/A'}</p>
+                        <p><strong>💾 Cache Status:</strong> ${data.cache_healthy ? 'Healthy' : 'Error'}</p>
+                        <p><strong>🔗 Protocols:</strong> ${data.protocols.join(', ')}</p>
+                        <p><strong>🚀 Version:</strong> ${data.version}</p>
+                    `;
+                    results.style.display = 'block';
+                    
+                } catch (error) {
+                    resultsContent.innerHTML = `
+                        <p>❌ Status check error: ${error.message}</p>
+                    `;
+                    results.style.display = 'block';
+                    console.error('Status error:', error);
+                } finally {
+                    loading.style.display = 'none';
+                }
+            }
+            
+            // Standard search functions
             async function loadInitialData() {
                 const loading = document.getElementById('loading');
                 const tbody = document.getElementById('disastersBody');
                 
                 loading.style.display = 'inline';
-                tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px;">Loading disaster data from last 7 days...</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px;">Loading disaster data...</td></tr>';
                 
                 try {
                     const response = await fetch('/api/initial-load');
@@ -252,13 +505,13 @@ async def dashboard():
                     if (data.success) {
                         currentDisasters = data.disasters || [];
                         displayResults(currentDisasters);
-                        console.log(`✅ Loaded ${currentDisasters.length} disasters from last 7 days`);
+                        console.log(`✅ Loaded ${currentDisasters.length} disasters`);
                     } else {
-                        throw new Error(data.message || 'Failed to load initial data');
+                        throw new Error(data.message || 'Failed to load data');
                     }
                 } catch (error) {
-                    tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px; color: #dc3545;">Error loading initial data. Please refresh the page.</td></tr>';
-                    console.error('Initial load error:', error);
+                    tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px; color: #dc3545;">Error loading data. Please refresh.</td></tr>';
+                    console.error('Load error:', error);
                 } finally {
                     loading.style.display = 'none';
                 }
@@ -296,16 +549,15 @@ async def dashboard():
             }
             
             async function refreshData() {
-                console.log('🔄 Auto-refreshing disaster data...');
+                console.log('🔄 Refreshing data...');
                 await searchDisasters();
             }
             
             function startAutoRefresh() {
-                // Auto-refresh every 10 minutes (600,000 ms)
                 autoRefreshInterval = setInterval(async () => {
                     await refreshData();
-                }, 600000);
-                console.log('✅ Auto-refresh started (every 10 minutes)');
+                }, 600000); // 10 minutes
+                console.log('✅ Auto-refresh started');
             }
             
             function displayResults(disasters) {
@@ -350,9 +602,9 @@ async def dashboard():
                     a.click();
                     URL.revokeObjectURL(url);
                     
-                    console.log(`✅ Downloaded blockchain data for disaster: ${disasterId}`);
+                    console.log(`✅ Downloaded: ${disasterId}`);
                 } catch (error) {
-                    alert('Download failed. Please try again.');
+                    alert('Download failed.');
                     console.error('Download error:', error);
                 }
             }
@@ -362,7 +614,6 @@ async def dashboard():
                 
                 try {
                     loading.style.display = 'inline';
-                    console.log(`🔗 Uploading disaster ${disasterId} to blockchain...`);
                     
                     const response = await fetch(`/api/disaster/${disasterId}/upload-chain`, {
                         method: 'POST',
@@ -372,44 +623,16 @@ async def dashboard():
                     const data = await response.json();
                     
                     if (data.success) {
-                        // Success notification
-                        const etherscanUrl = data.etherscan_url;
-                        const txHash = data.transaction_hash;
-                        
-                        alert(`✅ Successfully uploaded to blockchain!
-                        
-Transaction Hash: ${txHash}
-Block Number: ${data.block_number}
-Gas Used: ${data.gas_used}
-
-View on Etherscan: ${etherscanUrl}`);
-                        
-                        console.log(`✅ Uploaded disaster ${disasterId} to blockchain:`, data);
-                        
-                        // Open Etherscan in new tab
-                        if (confirm('Would you like to view the transaction on Etherscan?')) {
-                            window.open(etherscanUrl, '_blank');
+                        alert(`✅ Successfully uploaded to blockchain!\\n\\nTransaction: ${data.transaction_hash}`);
+                        if (confirm('View on Etherscan?')) {
+                            window.open(data.etherscan_url, '_blank');
                         }
-                        
                     } else {
-                        // Error handling
-                        let errorMessage = `❌ Upload failed: ${data.error}`;
-                        
-                        if (data.error_type === 'DUPLICATE') {
-                            errorMessage = `⚠️ This disaster already exists on the blockchain.`;
-                        } else if (data.error_type === 'CONNECTION_ERROR') {
-                            errorMessage = `❌ Blockchain connection failed. Please check your configuration.`;
-                        } else if (data.error_type === 'CONTRACT_ERROR') {
-                            errorMessage = `❌ Smart contract error. You may not have permission to upload.`;
-                        }
-                        
-                        alert(errorMessage);
-                        console.error('Upload failed:', data);
+                        alert(`❌ Upload failed: ${data.error}`);
                     }
                     
                 } catch (error) {
                     alert(`❌ Upload failed: ${error.message}`);
-                    console.error('Upload error:', error);
                 } finally {
                     loading.style.display = 'none';
                 }
@@ -440,7 +663,18 @@ View on Etherscan: ${etherscanUrl}`);
                 document.getElementById('lastUpdate').textContent = new Date().toLocaleTimeString();
             }
             
-            // Cleanup on page unload
+            // Enter key support
+            document.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    if (document.getElementById('ai-tab').classList.contains('active')) {
+                        searchWithAI();
+                    } else {
+                        searchDisasters();
+                    }
+                }
+            });
+            
+            // Cleanup
             window.onbeforeunload = function() {
                 if (autoRefreshInterval) {
                     clearInterval(autoRefreshInterval);
@@ -451,24 +685,14 @@ View on Etherscan: ${etherscanUrl}`);
     </html>
     """)
 
+# API endpoints (same as before)
 @app.get("/api/initial-load")
 async def load_initial_disasters():
-    """Load initial disaster data from cache (instant response)"""
     try:
-        logger.info("📂 Loading disasters from cache...")
-        
-        # Get disasters from cache (instant)
         disasters = await disaster_cache.get_disasters(days=7)
-        
-        # Background update if needed
-        if disaster_cache.should_update():
-            asyncio.create_task(background_update())
-        
-        # Update global cache
         global current_disasters
         current_disasters = disasters
         
-        # Convert DisasterInfo objects to dictionaries
         disasters_dict = []
         for disaster in disasters:
             disasters_dict.append({
@@ -490,9 +714,6 @@ async def load_initial_disasters():
             "success": True,
             "disasters": disasters_dict,
             "total": len(disasters_dict),
-            "days": 7,
-            "cached": True,
-            "last_update": disaster_cache.last_update.isoformat() if disaster_cache.last_update else None,
             "loaded_at": int(datetime.now().timestamp())
         })
         
@@ -504,56 +725,14 @@ async def load_initial_disasters():
             "disasters": []
         })
 
-async def background_update():
-    """백그라운드에서 캐시 업데이트"""
-    try:
-        logger.info("🔄 Background update started...")
-        
-        # 새로운 데이터 수집
-        fresh_disasters = await search_engine.get_initial_disasters(days=7)
-        
-        # 캐시 업데이트
-        added_count = await disaster_cache.update_cache(fresh_disasters)
-        
-        # 글로벌 캐시 업데이트
-        global current_disasters
-        current_disasters = await disaster_cache.get_disasters(days=7)
-        
-        logger.info(f"✅ Background update complete: {added_count} new disasters, total: {len(current_disasters)}")
-        
-    except Exception as e:
-        logger.error(f"❌ Background update failed: {e}")
-
 @app.post("/api/search")
 async def search_disasters(request: SearchRequest):
-    """AI-powered disaster search"""
     try:
-        logger.info(f"🔍 Searching disasters: {request.query}")
-        
-        # Use AI search engine
         disasters = await search_engine.search_disasters(
             query=request.query,
             max_results=request.max_results
         )
         
-        # 기존 재해 데이터와 새 검색 결과를 통합
-        global current_disasters
-        
-        # 기존 재해 ID 목록
-        existing_ids = {d.id for d in current_disasters}
-        
-        # 새로운 재해만 추가
-        new_disasters = []
-        for disaster in disasters:
-            if disaster.id not in existing_ids:
-                new_disasters.append(disaster)
-        
-        # 기존 데이터에 새 데이터 추가 (교체하지 않음)
-        current_disasters.extend(new_disasters)
-        
-        logger.info(f"📊 Search results: {len(disasters)} found, {len(new_disasters)} new, total: {len(current_disasters)}")
-        
-        # Convert DisasterInfo objects to dictionaries
         disasters_dict = []
         for disaster in disasters:
             disasters_dict.append({
@@ -587,11 +766,203 @@ async def search_disasters(request: SearchRequest):
             "disasters": []
         })
 
+@app.post("/api/uagent/query")
+async def uagent_disaster_query(request: DisasterQueryRequest):
+    try:
+        logger.info(f"🤖 uAgent query: {request.query}")
+        
+        # current_disasters를 딕셔너리 형태로 변환
+        disasters_dict = []
+        for disaster in current_disasters:
+            disasters_dict.append({
+                "id": disaster.id,
+                "title": disaster.title,
+                "description": disaster.description,
+                "location": disaster.location,
+                "severity": disaster.severity,
+                "category": disaster.category,
+                "timestamp": disaster.timestamp,
+                "source": disaster.source,
+                "confidence": disaster.confidence,
+                "affected_people": disaster.affected_people,
+                "coordinates": disaster.coordinates
+            })
+        
+        # 딕셔너리 데이터로 검색
+        matched_disasters = search_disasters_by_query(
+            disasters_dict, 
+            request.query, 
+            request.max_results
+        )
+        
+        disaster_results = []
+        for disaster in matched_disasters:
+            disaster_result = DisasterResult(
+                id=disaster.get('id', ''),
+                title=disaster.get('title', ''),
+                description=disaster.get('description', ''),
+                location=disaster.get('location', ''),
+                severity=disaster.get('severity', 'LOW'),
+                category=disaster.get('category', 'OTHER'),
+                timestamp=disaster.get('timestamp', 0),
+                source=disaster.get('source', ''),
+                confidence=disaster.get('confidence', 0.0),
+                affected_people=disaster.get('affected_people', 0) or 0,
+                coordinates=disaster.get('coordinates', {"lat": 0.0, "lng": 0.0}) or {"lat": 0.0, "lng": 0.0}
+            )
+            disaster_results.append(disaster_result)
+        
+        results = DisasterResults(
+            disasters=disaster_results,
+            total_count=len(disaster_results),
+            query=request.query,
+            searched_at=int(datetime.now().timestamp()),
+            agent_name="WRLD Relief Disaster Agent"
+        )
+        
+        logger.info(f"✅ uAgent found {len(disaster_results)} disasters for: '{request.query}'")
+        
+        return JSONResponse(results.dict())
+        
+    except Exception as e:
+        logger.error(f"❌ uAgent query error: {e}")
+        return JSONResponse({
+            "disasters": [],
+            "total_count": 0,
+            "query": request.query,
+            "searched_at": int(datetime.now().timestamp()),
+            "agent_name": "WRLD Relief Disaster Agent (Error)",
+            "error": str(e)
+        })
+
+def search_disasters_by_query(disasters_data: List[Any], query: str, max_results: int = 10) -> List[Any]:
+    """Search disasters by query for uAgent - 딕셔너리 데이터 처리"""
+    query_lower = query.lower()
+    matched_disasters = []
+    
+    for disaster in disasters_data:
+        # 딕셔너리 형태로 접근 (disaster.title이 아니라 disaster['title'])
+        title = disaster.get('title', '').lower() if disaster.get('title') else ''
+        description = disaster.get('description', '').lower() if disaster.get('description') else ''
+        location = disaster.get('location', '').lower() if disaster.get('location') else ''
+        category = disaster.get('category', '').lower() if disaster.get('category') else ''
+        
+        score = 0
+        query_words = query_lower.split()
+        
+        # 기본 키워드 매칭
+        for word in query_words:
+            if word in title:
+                score += 3
+            if word in description:
+                score += 2
+            if word in location:
+                score += 2
+            if word in category:
+                score += 1
+        
+        # 한국어 키워드 매핑
+        korean_mappings = {
+            '지진': ['earthquake', 'seismic'],
+            '홍수': ['flood', 'flooding'],
+            '산불': ['fire', 'wildfire'],
+            '태풍': ['hurricane', 'typhoon', 'cyclone'],
+            '화산': ['volcano', 'volcanic'],
+            '분쟁': ['war', 'conflict', 'attack'],
+            '일본': ['japan', 'japanese'],
+            '중국': ['china', 'chinese'],
+            '미국': ['usa', 'america', 'united states'],
+            '최근': ['recent', 'latest'],
+            '현재': ['current', 'now'],
+            '일어나는': ['happening', 'occurring']
+        }
+        
+        # 한국어 → 영어 매핑 처리
+        for korean, english_words in korean_mappings.items():
+            if korean in query_lower:
+                for eng_word in english_words:
+                    if eng_word in title or eng_word in description or eng_word in location or eng_word in category:
+                        score += 5
+        
+        # 특별 키워드 처리 (영어)
+        if any(word in ['earthquake', 'seismic'] for word in query_words):
+            if disaster.get('category') == 'EARTHQUAKE':
+                score += 5
+        
+        if any(word in ['flood', 'flooding'] for word in query_words):
+            if disaster.get('category') == 'FLOOD':
+                score += 5
+                
+        if any(word in ['fire', 'wildfire'] for word in query_words):
+            if disaster.get('category') == 'WILDFIRE':
+                score += 5
+                
+        if any(word in ['hurricane', 'typhoon', 'cyclone'] for word in query_words):
+            if disaster.get('category') == 'HURRICANE':
+                score += 5
+                
+        if any(word in ['volcano', 'volcanic'] for word in query_words):
+            if disaster.get('category') == 'VOLCANO':
+                score += 5
+                
+        if any(word in ['war', 'conflict', 'attack'] for word in query_words):
+            if disaster.get('category') == 'OTHER' and any(word in description for word in ['attack', 'killed', 'war', 'conflict']):
+                score += 5
+        
+        # 지역별 검색 (영어)
+        if any(word in ['japan', 'japanese'] for word in query_words):
+            if 'japan' in location:
+                score += 4
+                
+        if any(word in ['china', 'chinese'] for word in query_words):
+            if 'china' in location:
+                score += 4
+                
+        if any(word in ['usa', 'america', 'united states'] for word in query_words):
+            if any(word in location for word in ['united states', 'usa', 'america']):
+                score += 4
+        
+        # 최근/현재 키워드 처리
+        if any(word in ['recent', 'latest', 'current', 'now', 'today'] for word in query_words):
+            score += 2  # 모든 데이터가 최근 7일이므로 보너스 점수
+        
+        if score > 0:
+            # 딕셔너리에 점수 추가
+            disaster_copy = disaster.copy()
+            disaster_copy['search_score'] = score
+            matched_disasters.append(disaster_copy)
+    
+    # 점수순으로 정렬
+    matched_disasters.sort(key=lambda x: x.get('search_score', 0), reverse=True)
+    return matched_disasters[:max_results]
+
+@app.get("/api/uagent/status")
+async def uagent_status():
+    """uAgent status check"""
+    try:
+        return JSONResponse({
+            "status": "online",
+            "agent_name": "WRLD Relief Disaster Agent",
+            "total_disasters": len(current_disasters),
+            "uptime": "Running via FastAPI",
+            "version": "2.0.0",
+            "protocols": ["DisasterQuery", "DisasterResults", "AgentStatus"],
+            "endpoints": ["/api/uagent/query", "/api/uagent/status"],
+            "checked_at": int(datetime.now().timestamp())
+        })
+        
+    except Exception as e:
+        logger.error(f"❌ uAgent status error: {e}")
+        return JSONResponse({
+            "status": "error",
+            "error": str(e),
+            "checked_at": int(datetime.now().timestamp())
+        })
+
 @app.get("/api/disaster/{disaster_id}/blockchain")
 async def get_disaster_blockchain(disaster_id: str = Path(..., description="Disaster ID")):
     """Get blockchain data for a specific disaster"""
     try:
-        # Find disaster in current cache
         disaster = None
         for d in current_disasters:
             if d.id == disaster_id:
@@ -601,10 +972,7 @@ async def get_disaster_blockchain(disaster_id: str = Path(..., description="Disa
         if not disaster:
             raise HTTPException(status_code=404, detail="Disaster not found")
         
-        # Generate blockchain data
         blockchain_data = search_engine.generate_blockchain_data(disaster)
-        
-        logger.info(f"📤 Generated blockchain data for disaster: {disaster_id}")
         return JSONResponse(blockchain_data)
         
     except HTTPException:
@@ -613,120 +981,17 @@ async def get_disaster_blockchain(disaster_id: str = Path(..., description="Disa
         logger.error(f"❌ Blockchain export error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.get("/api/export-all")
-async def export_all_blockchain_data():
-    """Export blockchain data for all current disasters"""
-    try:
-        blockchain_data = {
-            "version": "2.0",
-            "timestamp": int(datetime.now().timestamp()),
-            "total_disasters": len(current_disasters),
-            "disasters": []
-        }
-        
-        for disaster in current_disasters:
-            disaster_blockchain = search_engine.generate_blockchain_data(disaster)
-            blockchain_data["disasters"].append(disaster_blockchain)
-        
-        logger.info(f"📤 Exported blockchain data for {len(current_disasters)} disasters")
-        return JSONResponse(blockchain_data)
-        
-    except Exception as e:
-        logger.error(f"❌ Bulk export error: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.get("/api/stats")
-async def get_disaster_stats():
-    """Get disaster statistics"""
-    try:
-        if not current_disasters:
-            return JSONResponse({
-                "total": 0,
-                "by_severity": {},
-                "by_category": {},
-                "last_updated": None
-            })
-        
-        # Calculate statistics
-        severity_counts = {}
-        category_counts = {}
-        
-        for disaster in current_disasters:
-            # Count by severity
-            severity = disaster.severity
-            severity_counts[severity] = severity_counts.get(severity, 0) + 1
-            
-            # Count by category
-            category = disaster.category
-            category_counts[category] = category_counts.get(category, 0) + 1
-        
-        return JSONResponse({
-            "total": len(current_disasters),
-            "by_severity": severity_counts,
-            "by_category": category_counts,
-            "last_updated": int(datetime.now().timestamp())
-        })
-        
-    except Exception as e:
-        logger.error(f"❌ Stats error: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.get("/api/cache/stats")
-async def get_cache_stats():
-    """Get cache statistics and status"""
-    try:
-        cache_stats = disaster_cache.get_cache_stats()
-        
-        return JSONResponse({
-            "success": True,
-            "cache_stats": cache_stats,
-            "current_disasters": len(current_disasters),
-            "should_update": disaster_cache.should_update(),
-            "timestamp": int(datetime.now().timestamp())
-        })
-        
-    except Exception as e:
-        logger.error(f"❌ Cache stats error: {e}")
-        return JSONResponse({
-            "success": False,
-            "message": str(e)
-        })
-
-@app.post("/api/cache/refresh")
-async def force_cache_refresh():
-    """Force cache refresh (manual trigger)"""
-    try:
-        logger.info("🔄 Manual cache refresh triggered...")
-        
-        # Force refresh cache
-        added_count = await disaster_cache.force_refresh()
-        
-        # Update global cache
-        global current_disasters
-        current_disasters = await disaster_cache.get_disasters(days=7)
-        
-        return JSONResponse({
-            "success": True,
-            "message": f"Cache refreshed successfully",
-            "added_disasters": added_count,
-            "total_disasters": len(current_disasters),
-            "refreshed_at": int(datetime.now().timestamp())
-        })
-        
-    except Exception as e:
-        logger.error(f"❌ Manual refresh error: {e}")
-        return JSONResponse({
-            "success": False,
-            "message": str(e)
-        })
-
 @app.post("/api/disaster/{disaster_id}/upload-chain")
 async def upload_disaster_to_chain(disaster_id: str = Path(..., description="Disaster ID")):
     """Upload disaster to blockchain"""
+    if not BLOCKCHAIN_AVAILABLE:
+        return JSONResponse({
+            "success": False,
+            "error": "Blockchain functionality not available",
+            "error_type": "MODULE_NOT_AVAILABLE"
+        })
+    
     try:
-        logger.info(f"🔗 Blockchain upload request for disaster: {disaster_id}")
-        
-        # Find disaster in current cache
         disaster = None
         for d in current_disasters:
             if d.id == disaster_id:
@@ -736,29 +1001,14 @@ async def upload_disaster_to_chain(disaster_id: str = Path(..., description="Dis
         if not disaster:
             raise HTTPException(status_code=404, detail="Disaster not found")
         
-        # Initialize blockchain uploader
-        try:
-            uploader = DisasterUploader()
-        except Exception as e:
-            logger.error(f"❌ Failed to initialize blockchain uploader: {e}")
-            return JSONResponse({
-                "success": False,
-                "error": f"Blockchain connection failed: {str(e)}",
-                "error_type": "CONNECTION_ERROR"
-            })
-        
-        # Upload to blockchain
+        uploader = DisasterUploader()
         result = await uploader.upload_disaster(disaster)
         
         if result["success"]:
-            logger.info(f"✅ Successfully uploaded disaster {disaster_id} to blockchain")
             return JSONResponse(result)
         else:
-            logger.error(f"❌ Failed to upload disaster {disaster_id}: {result.get('error')}")
             return JSONResponse(result, status_code=400)
         
-    except HTTPException:
-        raise
     except Exception as e:
         logger.error(f"❌ Blockchain upload error: {e}")
         return JSONResponse({
@@ -767,162 +1017,19 @@ async def upload_disaster_to_chain(disaster_id: str = Path(..., description="Dis
             "error_type": "UNKNOWN_ERROR"
         }, status_code=500)
 
-@app.get("/api/blockchain/status")
-async def get_blockchain_status():
-    """Get blockchain connection status and permissions"""
-    try:
-        uploader = DisasterUploader()
-        
-        # Check permissions
-        permissions = await uploader.check_permissions()
-        
-        # Get total disasters count from blockchain
-        total_count = await uploader.get_total_disasters_count()
-        
-        return JSONResponse({
-            "success": True,
-            "blockchain_connected": True,
-            "permissions": permissions,
-            "total_disasters_on_chain": total_count,
-            "contract_address": uploader.config.contract_address,
-            "network": uploader.config.network_name,
-            "account_address": uploader.account.address,
-            "etherscan_url": uploader.config.etherscan_url,
-            "checked_at": int(datetime.now().timestamp())
-        })
-        
-    except Exception as e:
-        logger.error(f"❌ Blockchain status check failed: {e}")
-        return JSONResponse({
-            "success": False,
-            "blockchain_connected": False,
-            "error": str(e),
-            "checked_at": int(datetime.now().timestamp())
-        })
-
-@app.get("/api/disaster/{disaster_id}/blockchain-status")
-async def get_disaster_blockchain_status(disaster_id: str = Path(..., description="Disaster ID")):
-    """Check if disaster exists on blockchain"""
-    try:
-        uploader = DisasterUploader()
-        
-        # Check if disaster exists on blockchain
-        blockchain_data = await uploader.get_disaster_from_blockchain(disaster_id)
-        
-        if blockchain_data:
-            return JSONResponse({
-                "success": True,
-                "exists_on_blockchain": True,
-                "blockchain_data": blockchain_data,
-                "disaster_id": disaster_id
-            })
-        else:
-            return JSONResponse({
-                "success": True,
-                "exists_on_blockchain": False,
-                "disaster_id": disaster_id
-            })
-            
-    except Exception as e:
-        logger.error(f"❌ Failed to check blockchain status for disaster {disaster_id}: {e}")
-        return JSONResponse({
-            "success": False,
-            "error": str(e),
-            "disaster_id": disaster_id
-        })
-
-@app.post("/api/disasters/batch-upload-chain")
-async def batch_upload_disasters_to_chain():
-    """Upload multiple disasters to blockchain"""
-    try:
-        logger.info(f"🔗 Batch blockchain upload request for {len(current_disasters)} disasters")
-        
-        if not current_disasters:
-            return JSONResponse({
-                "success": False,
-                "error": "No disasters available for upload"
-            })
-        
-        uploader = DisasterUploader()
-        
-        results = []
-        success_count = 0
-        error_count = 0
-        
-        # Upload disasters one by one (to avoid nonce conflicts)
-        for disaster in current_disasters[:10]:  # Limit to 10 for demo
-            try:
-                result = await uploader.upload_disaster(disaster)
-                results.append({
-                    "disaster_id": disaster.id,
-                    "disaster_title": disaster.title,
-                    "result": result
-                })
-                
-                if result["success"]:
-                    success_count += 1
-                    logger.info(f"✅ Uploaded {disaster.id}")
-                else:
-                    error_count += 1
-                    logger.warning(f"❌ Failed to upload {disaster.id}: {result.get('error')}")
-                
-                # Small delay to avoid rate limiting
-                await asyncio.sleep(2)
-                
-            except Exception as e:
-                error_count += 1
-                results.append({
-                    "disaster_id": disaster.id,
-                    "disaster_title": disaster.title,
-                    "result": {
-                        "success": False,
-                        "error": str(e),
-                        "error_type": "UPLOAD_ERROR"
-                    }
-                })
-                logger.error(f"❌ Exception uploading {disaster.id}: {e}")
-        
-        return JSONResponse({
-            "success": True,
-            "total_processed": len(results),
-            "success_count": success_count,
-            "error_count": error_count,
-            "results": results,
-            "uploaded_at": int(datetime.now().timestamp())
-        })
-        
-    except Exception as e:
-        logger.error(f"❌ Batch upload error: {e}")
-        return JSONResponse({
-            "success": False,
-            "error": str(e)
-        }, status_code=500)
-
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
-    cache_stats = disaster_cache.get_cache_stats()
-    
-    # Check blockchain status
-    blockchain_healthy = False
-    try:
-        uploader = DisasterUploader()
-        blockchain_healthy = True
-    except:
-        blockchain_healthy = False
-    
     return {
         "status": "healthy",
         "service": "wrld-relief-crisis-monitor",
         "version": "2.0.0",
         "monitoring": "active",
         "disasters_loaded": len(current_disasters),
-        "cache_healthy": cache_stats["cache_file_exists"],
-        "blockchain_healthy": blockchain_healthy,
-        "last_cache_update": cache_stats["last_update"],
+        "uagent_integrated": True,
         "timestamp": int(datetime.now().timestamp())
     }
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8001)
